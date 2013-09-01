@@ -1,0 +1,20 @@
+# MTK project .rc configure 
+
+	
+#
+# NO SHARED_SDCARD feature option
+#
+
+on init
+    mkdir /storage/sdcard0 0000 system system
+    mkdir /storage/sdcard1 0000 system system
+
+    export EXTERNAL_STORAGE /storage/sdcard0
+    export SECONDARY_STORAGE /storage/sdcard1
+
+    # for backwards compatibility
+    symlink /storage/sdcard0 /sdcard
+    symlink /storage/sdcard0 /mnt/sdcard
+    symlink /storage/sdcard1 /mnt/sdcard2
+    
+

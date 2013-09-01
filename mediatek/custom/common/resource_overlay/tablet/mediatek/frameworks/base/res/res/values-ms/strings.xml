@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="aerr_application_lowmem">Storan tablet penuh, aplikasi telah dihentikan. Sila kosongkan ruang dan cuba lagi.</string>  
+    <string name="aerr_process_lowmem">Storan tablet penuh, proses telah dihentikan. Sila kosongkan ruang dan cuba lagi.</string> 
+    <string name="criticallowmessage">Storan peranti penuh, sila padam fail yang tidak berguna, jika tidak aplikasi mungkin akan keluar tanpa dijangka</string>  
+</resources>

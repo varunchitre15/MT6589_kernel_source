@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="call_banner_sim_indicator_padding">3dip</dimen>
+    <dimen name="in_call_end_button_height">100dp</dimen>
+    <dimen name="dialpad_vertical_margin_dtmf">177dp</dimen>
+
+    <dimen name="vt_incall_screen_high_video_width">540px</dimen>
+    <dimen name="vt_incall_screen_high_video_height">443px</dimen>
+    <dimen name="vt_incall_screen_button_width">98px</dimen>
+    <dimen name="vt_incall_screen_end_button_width">202px</dimen>
+    <dimen name="vt_incall_screen_button_height">84px</dimen>
+    <dimen name="vt_incall_screen_low_video_height">263px</dimen>
+    <dimen name="vt_incall_screen_low_video_width">321px</dimen>
+    <dimen name="vt_incall_screen_low_video_margin_top">45px</dimen>
+</resources>

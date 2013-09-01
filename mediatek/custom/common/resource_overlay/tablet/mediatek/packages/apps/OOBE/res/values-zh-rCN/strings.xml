@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">  
+    <string name="oobe_summary_import_contacts">请选择某个或所有的SIM卡以便将其中的联系人导入平板电脑。</string> 
+	<string name="oobe_summary_language_setting">选择平板电脑使用的语言</string>  
+</resources>

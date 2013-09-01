@@ -1,0 +1,3 @@
+kernel/mediatek/platform/mt6589/kernel/drivers/mmc-host/dbg.ko
+kernel/mediatek/platform/mt6589/kernel/drivers/mmc-host/sd.ko
+kernel/mediatek/platform/mt6589/kernel/drivers/mmc-host/mt_sd_misc.ko

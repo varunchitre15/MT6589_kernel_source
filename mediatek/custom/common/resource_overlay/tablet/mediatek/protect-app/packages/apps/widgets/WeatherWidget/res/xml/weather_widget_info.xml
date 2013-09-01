@@ -1,0 +1,8 @@
+<appwidget-provider
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="300dip"
+    android:minHeight="255dip"
+    android:updatePeriodMillis="0"
+    android:previewImage="@drawable/preview"
+    android:initialLayout="@layout/weather_clock_init">
+</appwidget-provider>

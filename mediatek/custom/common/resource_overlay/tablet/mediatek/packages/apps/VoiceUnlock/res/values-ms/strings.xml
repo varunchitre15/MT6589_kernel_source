@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">  
+    <string name="voice_unlock_setup_end_prompt">Untuk membuka kunci tablet anda, cuma tuturkan perintah suara anda.</string>
+</resources>

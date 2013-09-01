@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="aerr_application_lowmem">Capacitatea de stocare a tabletei este plină, aplicaţia s-a oprit. Eliberaţi spaţiu şi încercaţi din nou.</string>  
+    <string name="aerr_process_lowmem">Capacitatea de stocare a tabletei este plină, procesul s-a oprit. Eliberaţi spaţiu şi încercaţi din nou.</string> 
+    <string name="criticallowmessage">Capacitatea de stocare a dispozitivului este plină, ştergeţi fişiere inutile, în caz contrar se poate ieşi din aplicaţie în mod neaşteptat</string>  
+</resources>

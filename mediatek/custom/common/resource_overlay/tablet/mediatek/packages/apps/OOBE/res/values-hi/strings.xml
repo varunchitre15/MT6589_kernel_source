@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">  
+    <string name="oobe_summary_import_contacts">टैबलेट में संपर्कों को आयात करने के लिए कुछ या अपने सभी प्रविष्ट सिम कार्ड का चयन करें।</string> 
+    <string name="oobe_summary_language_setting">अपने टैबलेट की परिचालन भाषा का चयन करें</string>  
+</resources>

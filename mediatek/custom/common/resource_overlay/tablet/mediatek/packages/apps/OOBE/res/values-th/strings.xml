@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">  
+    <string name="oobe_summary_import_contacts">เลือกซิมการ์ดบางอันหรือซิมการ์ดทั้งหมดที่คุณใส่ เพื่อนำเข้าผู้ติดต่อมายังแท็บเล็ต</string> 
+    <string name="oobe_summary_language_setting">เลือกภาษาของแท็บเล็ตในการใช้งาน</string>  
+</resources>

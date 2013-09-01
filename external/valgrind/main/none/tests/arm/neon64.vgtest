@@ -1,0 +1,4 @@
+prog: neon64
+vgopts: -q
+prog: neon64
+vgopts: -q

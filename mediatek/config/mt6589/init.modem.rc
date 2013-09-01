@@ -1,0 +1,120 @@
+# Copyright (C) 2012 The Android Open Source Project
+#
+# IMPORTANT: Do not create world writable files or directories.
+# This is a common source of Android security bugs.
+#
+   
+on post-fs-data
+
+    write /proc/bootprof "post-fs-data: on modem start"
+
+    # Modem related device nodes
+    mkdir /data/nvram/md  0770 root nvram
+    mkdir /data/nvram/md2 0770 root nvram
+
+    insmod /system/lib/modules/ccci_plat.ko
+    insmod /system/lib/modules/ccci.ko
+    chown ccci ccci /sys/class/BOOT/BOOT/boot/md
+    
+service gsm0710muxd /system/bin/gsm0710muxd -s /dev/ttyC0 -f 512 -n 8 -m basic
+    class core
+    user root
+    group radio cache inet misc ccci
+    disabled
+
+service gsm0710muxdmd2 /system/bin/gsm0710muxdmd2 -s /dev/ccci2_tty0 -f 512 -n 8 -m basic
+    class core
+    user root
+    group radio cache inet misc ccci
+    disabled
+
+service muxreport-daemon /system/bin/muxreport
+    class core
+    user radio
+    group radio cache inet misc ccci
+    disabled
+    oneshot
+
+service ril-daemon /system/bin/rild
+    class core
+    socket rild stream 660 root radio
+    socket rild2 stream 660 root radio
+    socket rild-debug stream 660 radio system
+    socket rild-mtk-ut stream 660 radio net_bt
+    socket rild-mtk-ut-2 stream 660 radio net_bt
+    socket rild-mtk-modem stream 660 radio system
+    socket rild-atci stream 660 root radio
+    user root
+    group radio cache inet misc audio sdcard_r sdcard_rw log ccci
+    disabled
+
+service ril-daemon-md2 /system/bin/rildmd2
+    class core
+    socket rild-md2 stream 660 root radio
+    socket rild2-md2 stream 660 root radio
+    socket rild-debug-md2 stream 660 radio system
+    socket rild-mtk-ut-md2 stream 660 radio net_bt
+    socket rild-mtk-ut-2-md2 stream 660 radio net_bt
+    socket rild-mtk-modem-md2 stream 660 radio system
+    socket rild-atci-md2 stream 660 root radio
+    user root
+    group radio cache inet misc audio sdcard_r sdcard_rw log ccci
+    disabled
+
+service md_minilog_util /system/bin/md_minilog_util
+    user radio
+    disabled
+    oneshot
+
+#
+#  Modem related services (Begin)
+#
+
+service permission_check /system/bin/permission_check
+    class main
+    user root
+    group nvram
+    oneshot
+
+service ccci_fsd /system/bin/ccci_fsd 0
+    user ccci
+    group  nvram ccci system
+    class core
+    oneshot
+
+service ccci2_fsd /system/bin/ccci_fsd 1
+    user ccci
+    group  nvram ccci system
+    class core
+    oneshot
+
+service ccci_mdinit /system/bin/ccci_mdinit 0
+    user system
+    group ccci system
+    class core
+    oneshot
+
+service ccci2_mdinit /system/bin/ccci_mdinit 1
+    user system
+    group ccci system
+    class core
+    oneshot
+
+
+service pppd_gprs /system/bin/pppd_dt /dev/ttyACM0 debug noauth refuse-eap usepeerdns nodetach
+    user root
+    group radio cache inet misc
+    disabled
+    oneshot
+
+#Add by T.Zh for ppp daemon
+service pppd /system/bin/pppd file /data/misc/ppp/ppp_options
+    user root
+    disabled 
+    oneshot
+
+#
+#
+#  Modem related services (End)
+#
+

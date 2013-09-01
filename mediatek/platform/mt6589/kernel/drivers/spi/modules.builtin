@@ -1,0 +1,2 @@
+kernel/mediatek/platform/mt6589/kernel/drivers/spi/spi.ko
+kernel/mediatek/platform/mt6589/kernel/drivers/spi/spi-dev.ko

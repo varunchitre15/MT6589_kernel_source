@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="no_sip_account_found">No hay cuentas de llamada de Internet en este dispositivo. ¿Desea agregar una ahora?</string>  
+    <string name="ota_progress">Espere mientras el dispositivo se programa.</string>  
+    <string name="ota_skip_activation_dialog_message">Si pasa por alto la activación, no podrá realizar llamadas o conectarse a redes de datos móviles (aunque podrá conectarse a redes Wi-Fi). Mientras el dispositivo no esté activado, se le pedirá que lo active cada vez que lo encienda.</string>  
+    <string name="ota_successful">Su dispositivo ahora está activado. El servicio puede tardar hasta 15 minutos en iniciarse.</string>  
+    <string name="ota_title_activate">Activar dispositivo</string>  
+    <string name="ota_title_activate_success">¡Dispositivo activado!</string>  
+    <string name="ota_touch_activate">Es necesario hacer una llamada especial para activar el servicio del dispositivo. \n\nDespués de presionar \u201CActivar\u201D, escuche las instrucciones proporcionadas para activar el dispositivo.</string>  
+    <string name="ota_unsuccessful">El dispositivo no se activó. \nPuede que tenga que buscar un área con mejor cobertura (junto a una ventana o en el exterior). \n\nInténtelo de nuevo o llame al servicio de atención al cliente para obtener más opciones.</string>  
+    <string name="puk_unlocked">La tarjeta SIM se ha desbloqueado. El dispositivo se está desbloqueando\u2026</string>  
+</resources>

@@ -1,0 +1,54 @@
+# ----------------------------------------------------------------------------
+#
+# GNU Make Extended Library (GMEL)
+#
+# ----------------------------------------------------------------------------
+
+define subdirs
+$(strip $(subst $(1)/./,,$(dir $(call wildcard2,$(1)/./*/))))
+endef
+
+# get relative path to codebase root by finding mediatek/build/libs/__gmel
+# parameter: (optional)a path; use current dir if no parameter given.
+# return value:  ../../../ for /xxx/frameworks/base/libs/
+define to-root
+$(strip $(eval to-root._1 := $(if $(1),$(1),$(CURDIR))) \
+$(if $(filter /,$(abspath $(to-root._1)/$(2))),,$(if $(call wildcard2,\
+  $(abspath $(to-root._1)/$(2)/mediatek/build/libs/__gmel)),$(2),$(call to-root,$(to-root._1),../$(2)))))
+endef
+
+# get relative path from codebase root by finding mediatek/build/libs/__gmel
+# parameter: (optional)a path; use current dir if no parameter given.
+# return value:  frameworks/base/libs/ for /xxx/frameworks/base/libs/
+define from-root
+$(strip $(eval from-root._1 := $(if $(1),$(1),$(CURDIR))) \
+$(subst $(abspath $(from-root._1)/$(call to-root,$(from-root._1)))/,,$(abspath $(from-root._1))/))
+endef
+
+define path.split
+$(patsubst %/,%,$(dir $(patsubst %/,%,$1))) $(notdir $(patsubst %/,%,$1))
+endef
+
+define all-c-cpp-files-under
+$(patsubst ./%,%, \
+  $(shell cd $(LOCAL_PATH) ; \
+          find $(1) -maxdepth 1 \( -name "*.c" -or -name "*.cpp" \) -and -not -name ".*") \
+ )
+endef
+
+# compatible version in both expand / not expand version
+define wildcard2
+$(strip $(if $(wildcard $(1)),$(wildcard $(1)),$(wildcard $(subst ],\],$(subst [,\[,$(1))))))
+endef
+
+# for make which won't expand [ ] sign
+#define wildcard2
+#$(wildcard $(1))
+#endef
+
+# for make which expand [ ] sign
+#define wildcard2
+#$(wildcard $(subst ],\],$(subst [,\[,$(1))))
+#endef
+
+%: %.sh;

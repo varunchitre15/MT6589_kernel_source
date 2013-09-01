@@ -1,0 +1,59 @@
+on post-fs
+#
+# Connectivity related modules and character device nodes (Begin)
+#
+    #for 662x_launcher
+    chmod 0660 /dev/ttyMT2
+    chown system system /dev/ttyMT2
+
+    # STP, SDIO, WMT, GPS, FM and BT Driver
+    insmod /system/lib/modules/mtk_hif_sdio.ko
+    insmod /system/lib/modules/mtk_stp_wmt.ko
+    insmod /system/lib/modules/mtk_stp_uart.ko
+    insmod /system/lib/modules/mtk_stp_gps.ko
+    insmod /system/lib/modules/mtk_stp_bt.ko
+    insmod /system/lib/modules/mtk_fm_drv.ko
+    insmod /system/lib/modules/mtk_fm_priv.ko
+    insmod /system/lib/modules/mtk_wmt_wifi.ko
+
+    # Create char device file for WMT, GPS, BT, FM, WIFI
+    mknod /dev/stpwmt c 190 0;
+    mknod /dev/stpgps c 191 0;
+    mknod /dev/stpbt  c 192 0;
+    mknod /dev/fm     c 193 0;
+    chmod 0660 /dev/stpwmt
+    chown system system /dev/stpwmt
+
+    # FM Radio device, FIXME: this is not a proper way to set permissions
+    chmod 0666 /dev/fm
+ 
+    mknod /dev/wmtWifi c 153 0
+    chmod 0666 /dev/wmtWifi
+    chmod 0660 /dev/stpgps
+    chmod 0660 /dev/stpbt
+    chown bluetooth radio /dev/stpbt
+    
+    # Load WiFi Driver
+    #insmod /system/lib/modules/wlan.ko
+
+#
+# Connectivity related modules and character device nodes (Ends)
+#
+
+on boot
+
+#
+# Connectivity related services (Begin)
+#
+service 662x_launcher /system/bin/logwrapper /system/bin/6620_launcher -b 4000000 -p /system/etc/firmware/ -d /dev/ttyMT2
+    user system
+    group system
+
+service wlanLoader /system/bin/wlan_loader
+    user root
+    group root
+    oneshot
+
+#
+# Connectivity related services (End)
+#

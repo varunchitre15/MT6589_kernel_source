@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="no_sip_account_found">এই ডিভাইসে কোনো ইন্টারনেট কলিং একাউন্ট নেই। নতুন একটি যোগ করবেন?</string>  
+    <string name="ota_progress">আপনার ডিভাইস প্রোগ্রাম হওয়া পর্যন্ত অপেক্ষা করুন।</string>  
+    <string name="ota_skip_activation_dialog_message">আপনি সক্রিয়করণ বাদ দিয়ে গেলে কল করতে বা মোবাইল ডাটা নেটওয়ার্কে সংযুক্ত হতে পারবেন না (যদিও আপনি ওয়াই-ফাই নেটওয়ার্কে সংযুক্ত হতে পারেন)। যতক্ষণ আপনি আপনার ডিভাইস সক্রিয় না করবেন তত প্রতিবার ফোন চালু করলেই আপনাকে সক্রিয় করতে বলা হবে।</string>  
+    <string name="ota_successful">আপনার ডিভাইস এখন সক্রিয়। সার্ভিস শুরু হতে ১৫ মিনিটের মত লাগতে পারে।</string>  
+    <string name="ota_title_activate">আপনার ডিভাইস সক্রিয় করুন</string>  
+    <string name="ota_title_activate_success">ডিভাইস সক্রিয় হয়েছে!</string>  
+    <string name="ota_touch_activate">আপনার ডিভাইস সেবা সক্রিয় করতে একটি বিশেষ কল করতে হবে। \n\n \u201Cসক্রিয় করুন\u201D চাপ দেওয়ার পর, আপনার ডিভাইস সক্রিয় করতে প্রদত্ত নির্দেশনা শুনুন।</string>  
+    <string name="ota_unsuccessful">আপনার ডিভাইস সক্রিয় হয়নি। \nভালো কাভারেজ সম্পন্ন (জানালার কাছে বা বাইরে) জায়গা খুঁজে নিতে হবে আপনাকে। \n\n আবার চেষ্টা করুন বা আরো অপশনের জন্য কাস্টমার সার্ভিসকে ফোন করুন।</string>  
+    <string name="puk_unlocked">আপনার সিম আনব্লক করা হয়েছে। আপনার ডিভাইস আনলক করা হচ্ছে\u2026</string>  
+</resources>

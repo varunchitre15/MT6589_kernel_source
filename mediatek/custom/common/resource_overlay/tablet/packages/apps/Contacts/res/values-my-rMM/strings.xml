@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Copyright (C) 2006 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">  
+    <string name="generic_no_account_prompt">သင်၏ စက်ကို ဆုံးရှံးသွားခဲ့သည့်တိုင် သင်၏ အဆက်အသွယ် များကို လုံခြုံစွာ သိမ်းထားနိုင်သည် -အွန်လိုင်း ဝန်ဆောင်မှု တစ်ခုဖြင့် တစ်မျိုးတည်း ဖြစ်အောင်ပြုလုပ်ပါ။</string>  
+    <string name="phone_storage_full_create">စက် သိုလှောင်ခြင်း ပြည့်နေသည်၊ သင် အဆက်အသွယ် အသစ် မဖန်တီးနိုင်ပါ။</string>  
+    <string name="phone_storage_full_edit">စက် သိုလှောင်ခြင်း ပြည့်နေသည်၊ သင် အဆက်အသွယ် ကို မပြင်ဆင်နိုင်ပါ။</string>  
+    <string name="warning_detail">SIM တွဲဆက်ထားခြင်း သည် အဆက်အသွယ် ကို စက်အတွင်းသို့ တင်သွင်းလိမ့်မည်။ SIM တွဲဆက်ထားခြင်းကို သင် ဆက်လုပ် ချင်ပါသလား။</string>  
+</resources>

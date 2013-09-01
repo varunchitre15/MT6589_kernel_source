@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="no_sip_account_found">Tiada akaun panggilan Internet pada peranti ini. Tambah akaun itu sekarang?</string>  
+    <string name="ota_progress">Sila tunggu sementara peranti anda sedang diprogram.</string>  
+    <string name="ota_skip_activation_dialog_message">Jika anda melangkau pengaktifan, anda tidak boleh membuat panggilan atau menyamb8ung kepada rangkaian data mudah alih (walaupun anda boleh menyambung kepada rangkaian Wi-Fi). Sehingga anda mengaktifkan peranti anda, anda diminta untuk mengaktifkannya setiap kali anda menghidupkannya.</string>  
+    <string name="ota_successful">Peranti anda kini telah diaktifkan. Ia mungkin mengambil sehingga 15 minit untuk perkhidmatan itu bermula.</string>  
+    <string name="ota_title_activate">Aktifkan peranti anda</string>  
+    <string name="ota_title_activate_success">Peranti diaktifkan!</string>  
+    <string name="ota_touch_activate">Panggilan khas perlu dibuat untuk mengaktifkan perkhidmatan peranti anda. \n\nSelepas menekan \u201CAktifkan\u201D, dengarkan arahan yang diberikan untuk mengaktifkan peranti anda.</string>  
+    <string name="ota_unsuccessful">Peranti anda tidak ditaktifkan. \nAnda mungkin perlu mencari kawasan yang mempunyai liputan yang lebih baik (berhampiran tingkap, atau di luar). \n\nCuba lagi atau hubungi khidmat pelanggan untuk mendapatkan pilihan lanjut.</string>  
+    <string name="puk_unlocked">Kad SIM anda telah dibuka sekatan. Peranti anda sedan membuka sekatan\u2026</string>  
+</resources>

@@ -1,0 +1,111 @@
+# ftrace
+#
+# CONFIG_MTK_SCHED_TRACERS is not set
+# CONFIG_MTK_KERNEL_MARKER is not set
+# CONFIG_MT65XX_TRACER is not set
+
+# MT prof
+# CONFIG_MTPROF_APPLAUNCH is not set
+# CONFIG_MTPROF_IRQ_DURATION is not set
+# CONFIG_MTPROF_KMEM is not set
+# CONFIG_MT_LOAD_BALANCE_PROFILER is not set
+# CONFIG_MT_SCHED_DEBUG_ONLY is not set
+# CONFIG_MTK_MEMCFG is not set
+
+#
+# kdb/kgdb
+#
+CONFIG_HAVE_ARCH_KGDB=y
+# CONFIG_KGDB is not set
+
+#
+# kprobes
+#
+# CONFIG_KPROBES is not set
+
+#
+# The following is Common configs (project indepentent)
+#
+# CONFIG_LOCALVERSION_AUTO is not set
+
+#
+# Kernel .config support
+#
+# CONFIG_IKCONFIG is not set
+
+CONFIG_PANIC_TIMEOUT=1
+
+#
+# OProfile
+#
+# CONFIG_OPROFILE is not set
+# CONFIG_RING_BUFFER_ALLOW_SWAP is not set
+# CONFIG_PERF_EVENTS is not set
+# CONFIG_HW_PERF_EVENTS is not set
+
+# CONFIG_DEVMEM is not set
+# CONFIG_DEVKMEM is not set
+
+CONFIG_CMDLINE="console=ttyMT3,921600n1 vmalloc=530M slub_max_order=0"
+# CONFIG_CFG80211_DEBUGFS is not set
+# CONFIG_LIB80211_DEBUG is not set
+# CONFIG_DM_DEBUG is not set
+# CONFIG_USB_DEBUG is not set
+# CONFIG_USB_STORAGE_DEBUG is not set
+# CONFIG_USB_MTK_DEBUG_FS is not set
+# CONFIG_USB_MTK_DEBUG is not set
+# CONFIG_JBD_DEBUG is not set
+
+#
+# Kernel hacking
+#
+# CONFIG_MAGIC_SYSRQ is not set
+# CONFIG_DEBUG_BUGVERBOSE is not set
+
+# CONFIG_PROFILING is not set
+# CONFIG_EVENT_TRACING is not set
+# CONFIG_EVENT_POWER_TRACING_DEPRECATED is not set
+# CONFIG_CONTEXT_SWITCH_TRACER is not set
+# CONFIG_GENERIC_TRACER is not set
+# CONFIG_TRACING is not set
+# CONFIG_FTRACE is not set
+# CONFIG_TRACEPOINTS is not set
+# CONFIG_DEBUG_MEMORY_INIT is not set
+
+# CONFIG_RELAY is not set
+# CONFIG_NAMESPACES is not set
+# CONFIG_BLK_DEV_RAM is not set
+# CONFIG_KALLSYMS_EXTRA_PASS is not set
+# CONFIG_KALLSYMS_ALL is not set
+
+# Performance Monitor
+# CONFIG_PREEMPT_MONITOR is not set
+# CONFIG_ISR_MONITOR is not set
+# CONFIG_MT_SCHED_MONITOR is not set
+
+# PM
+# CONFIG_PM_DEBUG is not set
+# CONFIG_PM_ADVANCED_DEBUG is not set
+# CONFIG_PM_TEST_SUSPEND is not set
+# CONFIG_CAN_PM_TRACE is not set
+
+# CONFIG_MT_CHRDEV_REG is not set
+# CONFIG_MT_ENG_BUILD is not set
+
+# Kernel Performance Events And Counters
+# CONFIG_PERF_EVENTS is not set
+# CONFIG_HW_PERF_EVENTS is not set
+# CONFIG_SLUB_DEBUG is not set
+# CONFIG_SLUB_DEBUG_ON is not set
+
+
+# Kernel Features
+# CONFIG_CC_STACKPROTECTOR is not set
+
+
+# Prove Locking
+# CONFIG_DEBUG_MUTEXES is not set
+# CONFIG_DEBUG_LOCK_ALLOC is not set
+# CONFIG_PROVE_LOCKING is not set
+# CONFIG_LOCKDEP is not set
+# CONFIG_DEBUG_LOCKDEP is not set

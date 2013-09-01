@@ -1,0 +1,30 @@
+#
+# XLOG service configuration
+#
+service xlogboot /system/bin/xlog boot
+    user root
+    oneshot
+    disabled
+
+service xlogdebugchanged /system/bin/xlog debug-changed
+    user root
+    oneshot
+    disabled
+
+on property:persist.mtk.aee.mode=1
+    start xlogdebugchanged
+
+on property:persist.mtk.aee.mode=2
+    start xlogdebugchanged
+
+on property:persist.mtk.aee.mode=3
+    start xlogdebugchanged
+
+on property:persist.mtk.aee.mode=4
+    start xlogdebugchanged
+
+on property:init.svc.adbd=running
+    start xlogdebugchanged
+
+on property:init.svc.adbd=stopped
+    start xlogdebugchanged

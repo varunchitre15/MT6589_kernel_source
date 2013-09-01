@@ -1,0 +1,18 @@
+#ifndef __MTCOMBO_H__
+#define __MTCOMBO_H__
+
+#include <linux/ioctl.h>
+
+typedef enum _ENUM_WMTHWVER_TYPE_T{
+    WMTHWVER_MT6620_E1 = 0x0,
+    WMTHWVER_MT6620_E2 = 0x1,
+    WMTHWVER_MT6620_E3 = 0x2,
+    WMTHWVER_MT6620_E4 = 0x3,
+    WMTHWVER_MT6620_MAX,
+    WMTHWVER_INVALID = 0xff
+} ENUM_WMTHWVER_TYPE_T, *P_ENUM_WMTHWVER_TYPE_T;
+
+#define COMBO_IOC_MAGIC 0x90
+#define COMBO_IOC_GPS_HWVER           6
+
+#endif // __MTCOMBO_H__

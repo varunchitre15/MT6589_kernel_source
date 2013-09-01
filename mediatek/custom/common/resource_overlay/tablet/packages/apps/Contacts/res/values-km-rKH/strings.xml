@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Copyright (C) 2006 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">  
+    <string name="generic_no_account_prompt">ធ្វើឲ្យលេខទំនាក់ទំនងរបស់អ្នកមានសុវត្ថិភាព បើទោះបីជាអ្នកបាត់បង់ឧបករណ៍របស់ខ្លួនក៏ដោយ ៖ ធ្វើសមកាលកម្មជាមួយនឹងសេវាកម្មអនឡាញ ។</string>  
+    <string name="phone_storage_full_create">កន្លែងផ្ទុកទិន្នន័យរបស់ឧបករណ៍ពេញហើយ អ្នកមិនអាចបង្កើតលេខទំនាក់ទំនងថ្មីបានទេ ។</string>  
+    <string name="phone_storage_full_edit">កន្លែងផ្ទុកទិន្នន័យរបស់ឧបករណ៍ពេញហើយ អ្នកមិនអាចកែសម្រួលលេខទំនាក់ទំនងបានទេ ។</string>  
+    <string name="warning_detail">SIM កាតដែលភ្ជាប់ជាមួយ នឹងនាំលេខទំនាក់ទំនងចូលទៅក្នុងឧបករណ៍ ។ តើអ្នកចង់បន្ត SIM កាតដែលភ្ជាប់ជាមួយឬទេ?</string>  
+</resources>

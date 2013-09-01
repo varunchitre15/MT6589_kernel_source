@@ -1,0 +1,439 @@
+on early-init
+    # Set init and its forked children's oom_adj.
+    write /proc/1/oom_adj -16
+
+    start ueventd
+
+    write /proc/bootprof "INIT: usr/eng build setting"
+# create mountpoints
+    mkdir /mnt 0775 root system
+    mkdir /storage 0055 system sdcard_r
+    mkdir /storage/sdcard0 0000 system system
+    mkdir /storage/sdcard1 0000 system system
+    # for backwards compatibility
+    symlink /storage/sdcard0 /sdcard
+    symlink /storage/sdcard0 /mnt/sdcard
+    symlink /storage/sdcard1 /mnt/sdcard2
+
+on init
+
+sysclktz 0
+
+loglevel 5
+    write /proc/bootprof "INIT: on init start"
+
+# setup the global environment
+    export PATH /sbin:/vendor/bin:/system/sbin:/system/bin:/system/xbin
+    export LD_LIBRARY_PATH /vendor/lib:/system/lib
+    export ANDROID_BOOTLOGO 1
+    export ANDROID_ROOT /system
+    export ANDROID_DATA /data
+    export EXTERNAL_STORAGE /storage/sdcard0
+    export SECONDARY_STORAGE /storage/sdcard1
+    export LOOP_MOUNTPOINT /mnt/obb
+
+# Backward compatibility
+    symlink /system/etc /etc
+    symlink /sys/kernel/debug /d
+
+# Right now vendor lives on the same filesystem as system,
+# but someday that may change.
+    symlink /system/vendor /vendor
+
+# Create cgroup mount point for cpu accounting
+    mkdir /acct
+    mount cgroup none /acct cpuacct
+    mkdir /acct/uid
+
+# Backwards Compat - XXX: Going away in G*
+    symlink /mnt/sdcard /sdcard
+
+    mkdir /system
+    mkdir /data 0771 system system
+    mkdir /config 0500 root root
+
+
+    # Filesystem image public mount points.
+    mkdir /mnt/obb 0700 root system
+    mount tmpfs tmpfs /mnt/obb mode=0755,gid=1000
+
+    write /proc/sys/kernel/panic_on_oops 1
+    write /proc/sys/kernel/hung_task_timeout_secs 0
+    write /proc/cpu/alignment 4
+    write /proc/sys/kernel/sched_latency_ns 10000000
+    write /proc/sys/kernel/sched_wakeup_granularity_ns 2000000
+    write /proc/sys/kernel/sched_compat_yield 1
+    write /proc/sys/kernel/sched_child_runs_first 0
+
+# mount different fs start
+on fs_property:ro.mount.fs=YAFFS
+# mount mtd partitions
+    # Mount /system rw first to give the filesystem a chance to save a checkpoint
+    write /proc/bootprof "INIT:NAND:Mount_START 6589"
+    mount yaffs2 mtd@system /system
+    mkdir /system/secro 0600 system system
+    mount yaffs2 mtd@system /system ro remount
+    mount yaffs2 mtd@userdata /data nosuid nodev
+    
+
+    # mount secro partition
+    mount yaffs2 mtd@secstatic /system/secro ro
+    mount yaffs2 mtd@cache /cache nosuid nodev
+    write /proc/bootprof "INIT:NAND:Mount_END 6589"
+
+on fs_property:ro.mount.fs=EXT4
+    write /proc/bootprof "INIT:eMMC:Mount_START"
+    exec /sbin/e2fsck -p /emmc@android
+    # Mount /system rw first to give the filesystem a chance to save a checkpoint
+    #mount ext4 emmc@android /system wait commit=1,data=journal,noauto_da_alloc
+    mount ext4 emmc@android /system wait commit=1,noauto_da_alloc
+    mkdir /system/secro 0600 system system
+    mount ext4 emmc@android /system noatime ro remount wait
+    exec /sbin/e2fsck -pfD /emmc@usrdata
+    exec /sbin/tune2fs -O has_journal /emmc@usrdata
+    exec /system/bin/ext4_resize
+    mount ext4 emmc@usrdata /data noatime nosuid nodev wait commit=1,nodelalloc,noauto_da_alloc	
+    mount ext4 /emmc@sec_ro /system/secro ro wait
+    exec /sbin/e2fsck -p /emmc@cache
+    exec /sbin/tune2fs -O has_journal /emmc@cache
+    mount ext4 emmc@cache /cache noatime nosuid nodev wait noauto_da_alloc
+    write /proc/bootprof "INIT:eMMC:Mount_END"
+
+on fs_property:ro.mount.fs=UBIFS
+    write /proc/bootprof "INIT:NAND:Mount_START"
+    mount ubifs ubi@system /system
+    mkdir /system/secro 0600 system system
+    mount ubifs ubi@system /system ro remount
+    mount ubifs ubi@userdata /data nosuid nodev
+    mount ubifs ubi@cache /cache nosuid nodev
+    mount ubifs ubi@secstatic /system/secro ro
+    write /proc/bootprof "INIT:NAND:Mount_END"
+# mount different fs end
+on post-fs
+    # once everything is setup, no need to modify /
+    mount rootfs rootfs / ro remount
+    chown system system /system/data
+    mkdir /system/cache 0770 system cache
+
+    # We chown/chmod /data again so because mount is run as root + defaults
+    chown system system /system/data
+    chmod 0777 /system/data
+
+    # We chown/chmod /data again so because mount is run as root + defaults
+    chown system system /data
+    chmod 0771 /data
+
+    # Same reason as /data above
+    chown system cache /cache
+    chmod 0770 /cache
+
+    mkdir /cache/recovery 0770 system system
+
+
+    # This may have been created by the recovery system with odd permissions
+    chown system cache /cache/recovery
+    chmod 0770 /cache/recovery
+
+    #change permissions on vmallocinfo so we can grab it from bugreports
+    chown root log /proc/vmallocinfo
+    chmod 0440 /proc/vmallocinfo
+
+    #change permissions on kmsg & sysrq-trigger so bugreports can grab kthread stacks
+    chown root system /proc/kmsg
+    chmod 0440 /proc/kmsg
+    chown root system /proc/sysrq-trigger
+    chmod 0220 /proc/sysrq-trigger
+
+# create basic filesystem structure
+    mkdir /data/nvram 0770 root nvram
+    mkdir /data/misc 01771 system misc
+    mkdir /data/misc/bluetoothd 0770 bluetooth bluetooth
+    mkdir /data/misc/bluetooth 0770 system system
+    mkdir /data/misc/keystore 0700 keystore keystore
+    mkdir /data/misc/keychain 0771 system system
+    mkdir /data/misc/vpn 0770 system vpn
+    mkdir /data/misc/systemkeys 0700 system system
+    # give system access to wpa_supplicant.conf for backup and restore
+    mkdir /data/misc/wifi 0770 wifi wifi
+    chmod 0660 /data/misc/wifi/wpa_supplicant.conf
+    mkdir /data/local 0771 shell shell
+    mkdir /data/local/tmp 0771 shell shell
+    mkdir /data/data 0771 system system
+    mkdir /data/app-private 0771 system system
+    mkdir /data/app 0771 system system
+    mkdir /data/property 0700 root root
+
+    # create the lost+found directories, so as to enforce our permissions
+    mkdir /data/lost+found 0770
+    mkdir /cache/lost+found 0770
+
+    # double check the perms, in case lost+found already exists, and set owner
+    chown root root /data/lost+found
+    chmod 0770 /data/lost+found
+    chown root root /cache/lost+found
+    chmod 0770 /cache/lost+found
+    
+    # dhcp server 
+    mkdir /data/misc/dhcp 0770 dhcp dhcp
+    chown dhcp dhcp /data/misc/dhcp
+
+    # device info interface
+    insmod /system/lib/modules/devinfo.ko
+    mknod /dev/devmap c 196 0;
+    chmod 0444 /dev/devmap
+    chown root media /dev/devmap
+
+    # load driver base driver
+    insmod /system/lib/modules/mtk_drvb_75.ko
+    mknod /dev/drvb c 176 0
+    chmod 0666 /dev/drvb
+
+## Custom pos-fs area (START)
+# Please add custom fs operation below
+
+#
+# Connectivity related modules and character device nodes (Begin)
+#
+
+    #/dev/ttyMT2 for 662x_launcher
+    chmod 0660 /dev/ttyMT2
+    chown system system /dev/ttyMT2
+
+    chmod 0660 /dev/ttyMT1
+    chown system system /dev/ttyMT1
+
+    # STP, WMT, GPS, FM and BT Driver
+    insmod /system/lib/modules/mtk_hif_sdio.ko
+    insmod /system/lib/modules/mtk_stp_wmt.ko
+    insmod /system/lib/modules/mtk_stp_uart.ko
+    insmod /system/lib/modules/mtk_stp_gps.ko
+    insmod /system/lib/modules/mtk_stp_bt.ko
+    insmod /system/lib/modules/mtk_fm_drv.ko
+    #insmod /system/lib/modules/mtk_fm_priv.ko
+    insmod /system/lib/modules/mtk_wmt_wifi.ko
+
+    # Create char device file for WMT, GPS, BT, FM, WIFI
+    mknod /dev/stpwmt c 190 0;
+    mknod /dev/stpgps c 191 0;
+    mknod /dev/stpbt  c 192 0;
+    mknod /dev/fm     c 193 0;
+    chmod 0660 /dev/stpwmt
+    chown system system /dev/stpwmt
+ 
+    mknod /dev/wmtWifi c 153 0
+    chmod 0666 /dev/wmtWifi
+
+    # BT
+    chmod 0660 /dev/stpbt
+    chown bluetooth radio /dev/stpbt
+
+    # FM Radio device, FIXME: this is not a proper way to set permissions
+    chmod 0666 /dev/fm
+    # GPS
+    chmod 0666 /dev/gps
+    chmod 0660 /dev/stpgps
+
+    # WiFi
+    mkdir /data/misc/wifi 0770 wifi wifi
+    mkdir /data/misc/wifi/sockets 0770 wifi wifi
+    mkdir /data/misc/wpa_supplicant 0770 wifi wifi
+    mkdir /data/misc/dhcp 0770 dhcp dhcp
+    chown dhcp dhcp /data/misc/dhcp
+
+    # Load WiFi Driver (factory mode application does the stuff)
+    #insmod /system/lib/modules/wlan.ko
+
+#
+# Connectivity related modules and character device nodes (End)
+#
+
+
+    # Touch Panel
+    chown root diag /sys/module/tpd_setting/parameters/tpd_calmat
+    chown root diag /sys/module/tpd_setting/parameters/tpd_em_debounce_time
+    chown root diag /sys/module/tpd_debug/parameters/tpd_em_log
+    chown root diag /sys/module/tpd_debug/parameters/tpd_em_log_to_fs
+
+    chmod 0777 /dev/pmem_multimedia
+    chmod 0777 /dev/mt6516-isp
+    chmod 0777 /dev/mt6516-IDP
+    chmod 0777 /dev/mt9p012
+    chmod 0777 /dev/mt6516_jpeg
+    chmod 0777 /dev/FM50AF
+
+    # RTC
+    mkdir /data/misc/rtc 0770 system system
+
+    # Modem related device nodes
+    mkdir /data/nvram/md  0770 root nvram
+    mkdir /data/nvram/md2 0770 root nvram
+
+    insmod /system/lib/modules/ccci_plat.ko
+    insmod /system/lib/modules/ccci.ko
+    chown ccci ccci /sys/class/BOOT/BOOT/boot/md
+    # M4U
+    #insmod /system/lib/modules/m4u.ko
+    #mknod /dev/M4U_device c 188 0
+    chmod 0444 /dev/M4U_device
+    
+    # Sensor
+    chmod 0666 /dev/hwmsensor
+    chmod 0666 /dev/msensor
+    chmod 0666 /dev/gsensor
+    chmod 0666 /dev/als_ps
+    chmod 0666 /dev/gyroscope
+
+    #VideoCodec
+    insmod /system/lib/modules/vcodec_kernel_driver.ko
+    mknod /dev/Vcodec c 189 0
+    chmod 0666 /dev/Vcodec
+
+
+    mkdir /data/amit/
+
+    # GPIO
+    chmod 0666 /dev/mtgpio
+## Custom pos_fs area (END) 
+
+on boot
+# basic network init
+    ifup lo
+    hostname localhost
+    domainname localdomain
+
+# Define RIL properties
+    setprop rild.nw.operlist /system/etc/ril/oper.lis
+
+# Start default class, this line is very important!!
+   class_start default
+   start sdcard
+
+## Daemon processes to be run by init.
+##
+
+# Update the second boot logo
+# service bootlogoupdater /system/bin/boot_logo_updater
+#    oneshot
+
+service ueventd /sbin/ueventd
+    class core
+    critical
+
+service console /system/bin/sh
+    class core
+    console
+    disabled
+    user root
+    group log
+
+on property:ro.debuggable=1
+    start console
+
+# adbd is controlled via property triggers in init.<platform>.usb.rc
+service adbd /sbin/adbd
+    class core
+
+## Custom service area (START)
+# Please add custom service below
+service ccci_fsd /system/bin/ccci_fsd 0
+    user ccci
+    group  nvram ccci system
+    oneshot
+
+service ccci2_fsd /system/bin/ccci_fsd 1
+    user ccci
+    group  nvram ccci system
+    oneshot
+
+service ccci_mdinit /system/bin/ccci_mdinit 0
+    user system
+    group ccci system
+    oneshot
+
+service ccci2_mdinit /system/bin/ccci_mdinit 1
+    user system
+    group ccci system
+    oneshot
+
+
+service nvram_daemon /system/bin/nvram_daemon
+    user nvram
+    group nvram system
+    oneshot
+
+service mdlogger /system/bin/mdlogger
+    class main
+    user shell
+    group shell system radio sdcard_rw inet ccci
+    disabled
+    oneshot
+    
+service dualmdlogger /system/bin/dualmdlogger
+    class main
+    user shell
+    group shell system radio sdcard_rw inet ccci
+    disabled
+    oneshot
+
+service factory_no_image /system/bin/logwrapper /system/bin/factory
+    disable
+    oneshot
+
+service factory_with_image /system/bin/logwrapper /sbin/factory
+	disable
+    oneshot
+#
+# Connectivity related services (Begin)
+#
+service 662x_launcher /system/bin/logwrapper /system/bin/6620_launcher -b 4000000 -p /system/etc/firmware/ -d /dev/ttyMT2
+    user system
+    group system
+    oneshot
+
+service wlanLoader /system/bin/wlan_loader
+    user root
+    group root
+    oneshot
+
+#service hald /system/bin/hald
+#    class main
+#    socket hald stream 0660 root system
+    
+#service wpa_supplicant /system/bin/logwrapper /system/bin/wpa_supplicant
+#    group wifi
+#    disabled
+#    oneshot    
+#
+# Connectivity related services (End)
+#
+#
+## Custom service area (END)
+
+
+on property:sys.mtk.no.factoryimage=1
+    start factory_no_image
+
+on property:sys.mtk.no.factoryimage=0
+    start factory_with_image
+
+#mass_storage,adb,acm
+on property:sys.usb.com_config=0
+    write /sys/class/android_usb/android0/iSerial $ro.serialno
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/idVendor 0bb4
+    write /sys/class/android_usb/android0/idProduct 0005
+    write /sys/class/android_usb/android0/f_acm/instances 1
+    write /sys/class/android_usb/android0/functions mass_storage,adb,acm
+    write /sys/class/android_usb/android0/enable 1
+    start adbd
+
+#acm
+on property:sys.usb.com_config=1
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/iSerial " "
+    write /sys/class/android_usb/android0/idVendor 0e8d
+    write /sys/class/android_usb/android0/idProduct 2007
+    write /sys/class/android_usb/android0/f_acm/instances 1
+    write /sys/class/android_usb/android0/functions acm
+    write /sys/class/android_usb/android0/bDeviceClass 02
+    write /sys/class/android_usb/android0/enable 1

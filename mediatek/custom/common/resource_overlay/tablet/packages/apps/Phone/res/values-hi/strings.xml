@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="no_sip_account_found">इस उपकरण पर कोई इंटरनेट कॉलिंग खाता नहीं है। अब एक जोड़ें?</string>  
+    <string name="ota_progress">कृपया आपके उपकरण के प्रोग्राम किए जाने तक प्रतीक्षा करें।</string>  
+    <string name="ota_skip_activation_dialog_message">यदि आप सक्रियण को छोड़ कर आगे बढ़ते हैं, तो आप कॉल नहीं कर पाएंगे या मोबाइल डेटा नेटवर्क से जुड़ नहीं पाएंगे (यद्यपि आप Wi-Fi नेटवर्कों के माध्यम से जुड़ सकते हैं)। जब तक आप अपने उपकरण को सक्रिय नहीं कर देते, इसे प्रत्येक बार ऑन करने पर आपको अपना उपकरण सक्रिय करने के लिए कहा जाएगा।</string>  
+    <string name="ota_successful">आपका उपकरण अब सक्रिय है। सेवा आरंभ करने में 15 मिनट तक का समय लग सकता है।</string>  
+    <string name="ota_title_activate">अपने उपकरण को सक्रिय करें</string>  
+    <string name="ota_title_activate_success">उपकरण सक्रिय हो गया!</string>  
+    <string name="ota_touch_activate">आपकी उपकरण सेवा को सक्रिय करने के लिए एक विशेष कॉल करने की जरूरत होगी। \n\n\u201Cसक्रिय करें\u201D दबाने के बाद, अपने उपकरण को सक्रिय करने के लिए प्रदान किए जाने वाले निर्देशों को सुनें।</string>  
+    <string name="ota_unsuccessful">आपका उपकरण सक्रिय नहीं हुआ। \nआपको बेहतर कवरेज वाले क्षेत्र की तलाश करनी होगी (खिड़की के निकट, या बाहर)। \n\nअधिक विकल्पों के लिए पुनः प्रयास करें या ग्राहक सेवा को कॉल करें।</string>  
+    <string name="puk_unlocked">आपका सिम अनवरोधित कर दिया गया है। आपका उपकरण अनवरोधित हो रहा है\u2026</string>  
+</resources>

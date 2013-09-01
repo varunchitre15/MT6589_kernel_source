@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="no_sip_account_found">اس آلے پر کوئی انٹرنیٹ کالنگ آلات نہيں ہیں۔ ابھی شامل کریں؟</string>  
+    <string name="ota_progress">اپنے آلے کے پروگرام ہونے کے دوران انتظار کریں۔</string>  
+    <string name="ota_skip_activation_dialog_message">فعال کرنا کا عمل چھوڑنے کی صورت آپ کال نہيں کرسکتے ہيں اور نہ ہی موبائل ڈیٹا نیٹورک سے متصل کرسکتے ہيں (لیکن آپ Wi-Fi نیٹورک سے جڑ سکتے ہيں)۔ اپنا آلہ فعال کرنے تک آپ کو ہر بار آن کرنے پر فعال کرنے کو کہا جائے گا۔</string>  
+    <string name="ota_successful">آپ کا آلہ فعال ہوگیا ہے۔ خدمت شروع ہرنے میں 15 منٹ تک کا وقت لگ سکتا ہے۔</string>  
+    <string name="ota_title_activate">اپنا آلہ فعال کریں</string>  
+    <string name="ota_title_activate_success">آلہ فعال ہے!</string>  
+    <string name="ota_touch_activate">اپنے آلے کی خدمت فعال کرنے کے لئے خصوصی کال کرنے کی ضورت ہے۔ \n\n \u201Cفعال\u201D چھونے کے بعد، اپنے آلے کو فعال کرنے کے لئے فراہم کردہ ہدایات سنیں.</string>  
+    <string name="ota_unsuccessful">آپ کا آلہ فعال نہيں ہوسکا ہے۔ /n ممکن ہے کہ آپ کے ایسے علاقے میں جانے کی ضرورت ہو جہاں کوریج بہتر ہو (کھڑکی کے قریب، یا باہر)۔ /n/nدوبارہ کوشش کریں یا مزید اختیارات کے لئے کسٹمر کی خدمت پر کال کریں۔</string>  
+    <string name="puk_unlocked">آپ کے SIM کارڈ کو ان بلاک کیا گيا ہے۔ آپ کا آلہ غیرمقفل ہورہا ہے/u2026</string>  
+</resources>

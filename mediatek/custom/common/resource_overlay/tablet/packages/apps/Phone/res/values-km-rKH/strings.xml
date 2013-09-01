@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" xmlns:tools="http://schemas.android.com/tools">  
+    <string name="no_sip_account_found">មិនមានគណនីការហៅតាមអ៊ិនថឺណិតនៅក្នុងឧបករណ៍នេះទេ ។ បន្ថែមគណនីមួយឥឡូវនេះទេ?</string>  
+    <string name="ota_progress">សូមរងចាំ ខណៈពេលដែលឧបករណ៍របស់អ្នកកំពុងត្រូវបានដាក់កម្មវិធី ។</string>  
+    <string name="ota_skip_activation_dialog_message">បើអ្នករំលងការធ្វើឲ្យសកម្មចោល អ្នកមិ\នអាចហៅ ឬតភ្ជាប់ជាមួយនឹងបណ្តាញទិន្នន័យចល័តបានទេ (បើទោះបីជាអ្នកអាចតភ្ជាប់ជាមួយបណ្តាញ Wi-Fi បាន) ។ បើអ្នកមិនធ្វើឲ្យឧបករណ៍របស់អ្នកសកម្មទេ រៀងរាល់ពេលដែលអ្នកបើក នឹងមានសំណួរសូមឲ្យអ្នកធ្វើឲ្យវាសកម្ម ។</string>  
+    <string name="ota_successful">ឧបករណ៍របស់អ្នក ឥឡូវនេះសកម្មហើយ ។ វាអាចត្រូវចំណាយពេលរហូតដល់ទៅ 15 ទើបសេវាកម្មអាចចាប់ផ្តើមបាន ។</string>  
+    <string name="ota_title_activate">ធ្វើឲ្យឧបករណ៍របស់អ្នកសកម្ម</string>  
+    <string name="ota_title_activate_success">ឧបករណ៍សកម្មហើយ!</string>  
+    <string name="ota_touch_activate">ត្រូវធ្វើការហៅពិសេសមួយ ដើម្បីធ្វើឲ្យសេវាកម្មឧបករណ៍របស់អ្នកសកម្ម ។ \n\nបន្ទាប់ពីការចុចលើ \u201CActivate\u201D សូមស្តាប់ពាក្យណែនាំដើម្បីធ្វើឲ្យឧបករណ៍របស់អ្នកសកម្ម ។</string>  
+    <string name="ota_unsuccessful">ឧបករណ៍របស់អ្នកមិនទាន់សកម្មទេ ។ \nអ្នកត្រូវរកកន្លែងដែលមានសេវាប្រសើរ (ជិតបង្អួច ឬក្រៅផ្ទះ)​ ។ \n\nសាកល្បងម្តងទៀត ឬហៅសេវាកម្មបម្រើអតិថិជន សម្រាប់ជម្រើសផ្សេងទៀត ។</string>  
+    <string name="puk_unlocked">SIM កាតរបស់អ្នកត្រូវបានដោះសោចេញ ។ ឧបករណ៍របស់អ្នកកំពុងត្រូវបានដោះសោ\u2026</string>  
+</resources>

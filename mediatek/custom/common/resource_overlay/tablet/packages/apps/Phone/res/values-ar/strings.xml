@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="no_sip_account_found">لا توجد حسابات اتصال بالإنترنت على هذا الجهاز، إضافة حساب الآن؟</string>  
+    <string name="ota_progress">يُرجى الانتظار حتى يتم برمجة الجهاز.</string>  
+    <string name="ota_skip_activation_dialog_message">في حالة الخروج من التنشيط، سيتعذر إجراء مكالمات أو الاتصال بشبكات بيانات الهواتف المحمولة (لذا يمكنك الاتصال بشبكات Wi-Fi). سيُطلب منك تنشيط الجهاز في أي وقت تقوم بتشغيله إلى أن تتمكن من تنشيط الجهاز خاصتك.</string>  
+    <string name="ota_successful">تم تنشيط الجهاز حاليًا. قد تستغرق مدة بدء الخدمة حوالي 15 دقيقة.</string>  
+    <string name="ota_title_activate">تنشيط الجهاز</string>  
+    <string name="ota_title_activate_success">تم تنشيط الجهاز!</string>  
+    <string name="ota_touch_activate">يجب إجراء مكالمة خاصة لتنشيط خدمة الجهاز. \n\nبعد الضغط على \u201Cتنشيط\u201D, اتبع التعليمات الواردة لتنشيط الجهاز.</string>  
+    <string name="ota_unsuccessful">لم يتم تنشيط الجهاز، \nقد تضطر إلى البحث عن مكان به تغطية جيدة (بالقرب من نافذة أو بالخارج). \n\nحاول مرة أخرى أو اتصل بخدمة العملاء للحصول على مزيد من الخيارات.</string>  
+    <string name="puk_unlocked">تم إلغاء قفل بطاقة SIM. جارٍ إلغاء قفل الجهاز\u2026</string>  
+</resources>

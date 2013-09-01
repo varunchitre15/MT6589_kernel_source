@@ -1,0 +1,180 @@
+# TODO naming refine
+menu "Kernel Configurations"
+
+menu "Tracer Related"
+config MTK_SCHED_TRACERS
+        bool "MTK Sched Tracers"
+        select CONTEXT_SWITCH_TRACER
+        select GENERIC_TRACER
+        help
+           Trace context swicth, set_scheduler, Interrupt Handler
+
+config MTK_KERNEL_MARKER
+        bool "MTK Kernel Marker API"
+        depends on TRACING
+        help
+            Mark the user-defined points, such as systrace events in
+            user space, to visualize via systrace html files
+
+config FUNCTION_DURATION_TRACER
+        bool "Kernel Function Duration Tracer"
+        depends on FUNCTION_GRAPH_TRACER
+        help
+          Enable the kernel to record function durations, with
+          filtering.  Can also be used in early startup.
+          See Documentation/trace/func-duration.txt
+
+config MT65XX_TRACER
+        bool "MT65XX Tracer"
+        select CONTEXT_SWITCH_TRACER
+        select GENERIC_TRACER
+
+config GENERIC_TRACER
+        bool "Scheduler Switch Tracer"
+
+endmenu
+
+menu "MTPROF tools"
+
+config MTPROF_CPUTIME
+    bool "thread cputime profiling"
+    depends on SCHEDSTATS
+
+endmenu
+
+config MTPROF_IRQ_DURATION
+    bool "mt IRQ/ISR profiling"
+
+config MTK_AEE_FEATURE
+        tristate "Enable Android Exception Enhancement"
+        default n
+        ---help---
+          Enable Android Exception Enhancement
+
+config MTK_AEE_AED
+        tristate "Enable AEE Kernel Exception Report Daemon"
+        default y
+
+config MTK_AEE_IPANIC
+        tristate "Enable AEE Kernel Panic Dump"
+        default y
+
+config MTK_AEE_KDUMP
+        tristate "Include memory Dump"
+        default y
+
+config ANDROID_VMEM
+	tristate "Virutally continuous memory allocator"
+	default y
+
+config CPUTIME_SUPPORT
+	bool "cputime profiling support for functions"
+	default n
+
+config CPUTIME_STATS
+	tristate "cputime profiling module for functions"
+	select CPUTIME_SUPPORT
+	default n
+	
+config MTK_RAM_CONSOLE
+        bool "mt ram console"     
+        
+config MTK_RAM_CONSOLE_SIZE
+	hex "MTK RAM console  address"
+	default 0
+	depends on MTK_RAM_CONSOLE
+
+config MTK_RAM_CONSOLE_ADDR
+	hex "MTK RAM console buffer size"
+	default 0
+	depends on MTK_RAM_CONSOLE           
+
+
+config PREEMPT_MONITOR
+	bool "mt preempt monitor"
+	default n
+
+config ISR_MONITOR
+	bool "mt ISR monitor"
+	default n
+
+config MT_SCHED_MONITOR
+	bool "mt scheduler monitor"
+	default n
+
+config MT_CHRDEV_REG
+	bool "mt char driver number table"
+	default n
+
+config MT_LOCK_DEBUG
+	bool "Record lock table and detect some possible deadlock"
+	default n
+
+config MT_DEBUG_MUTEXES
+	bool "show mutex owner info"
+    depends on DEBUG_MUTEXES 
+	default n
+
+config PRINTK_PROCESS_INFO 
+	bool "Prefix pid/process_name to each kernel log"
+	default n
+
+config MT_ENG_BUILD
+    bool "flag for MTK eng/usr build verification"
+    default n
+config RAMDISK_OFFSET
+        hex "Uboot allocate memory offset for RAMDISK"
+        default 0xF00000
+        help
+        Used to check decompressed kernel overwrite ramdisk.
+        (DO NOT MODIFY IT YOURSELF.)
+
+config EARLY_LINUX_PORTING
+       bool "Support For Linux Early Porting"
+       default n
+       help
+
+config MTK_MCI
+       bool "Support For Memory coherence"
+       default n
+       help
+
+config MTK_ETM
+       bool "Support For Embedded Trace Macrocell"
+       default y
+       help
+
+config MTK_MEMCFG
+       bool "Support enhanced memory configurations"
+       default n
+       help
+
+menu "MT load balance and schedule enhancement"
+config MT_SCHED
+	bool "Enhance CPU affinity in hotplug"	
+ 	depends on HOTPLUG
+
+config MT_LOAD_BALANCE_ENHANCEMENT
+	bool "mt load balance enhancement"
+	depends on  SMP
+
+config MT_LOAD_BALANCE_PROFILER
+	bool "mt load balance profiler"
+	depends on SCHEDSTATS && SMP
+	
+config MT_SCHED_DEBUG_ONLY
+        bool "mt scheduler debug only"
+endmenu
+
+config MTK_CIRQ
+       bool "Support For System CIRQ"
+       default n
+       help
+
+config MTK_HIBERNATION
+        bool "Support MTK hibernation"
+        depends on HIBERNATION
+        default y
+        help
+
+endmenu

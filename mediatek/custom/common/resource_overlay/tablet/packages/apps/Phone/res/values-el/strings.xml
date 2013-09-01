@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="no_sip_account_found">Δεν υπάρχουν λογαριασμοί κλήσεων μέσω Internet σε αυτή τη συσκευή. Προσθήκη νέου λογαριασμού;</string>  
+    <string name="ota_progress">Περιμένετε μέχρι να ολοκληρωθεί ο προγραμματισμός της συσκευής σας.</string>  
+    <string name="ota_skip_activation_dialog_message">Εάν παραλείψετε την ενεργοποίηση, δεν θα μπορείτε να πραγματοποιήσετε κλήσεις ή να συνδεθείτε σε δίκτυα δεδομένων κινητής τηλεφωνίας (αν και θα μπορείτε να συνδεθείτε σε δίκτυα Wi-Fi). Μέχρι να ενεργοποιήσετε τη συσκευή σας, θα σας ζητείται να την ενεργοποιήσετε κάθε φορά που θα τη θέτετε σε λειτουργία.</string>  
+    <string name="ota_successful">Η συσκευή σας ενεργοποιήθηκε. Ενδέχεται να χρειαστούν έως και 15 λεπτά για την έναρξη της υπηρεσίας.</string>  
+    <string name="ota_title_activate">Ενεργοποιήστε τη συσκευή σας</string>  
+    <string name="ota_title_activate_success">Η συσκευή ενεργοποιήθηκε!</string>  
+    <string name="ota_touch_activate">Πρέπει να γίνει μια ειδική κλήση για να ενεργοποιηθεί η υπηρεσία της συσκευής που διαθέτετε. \n\nΑφού πιέσετε \u201CΕνεργοποίηση\u201D, ακούστε τις οδηγίες που παρέχονται για να ενεργοποιήσετε τη συσκευή σας.</string>  
+    <string name="ota_unsuccessful">Η συσκευή σας δεν ενεργοποιήθηκε. \nΊσως χρειάζεται να βρείτε μια περιοχή με καλύτερη κάλυψη (κοντά σε ένα παράθυρο ή σε εξωτερικό χώρο). \n\nΔοκιμάστε ξανά ή καλέστε την υπηρεσία εξυπηρέτησης πελατών για περισσότερες επιλογές.</string>  
+    <string name="puk_unlocked">Καταργήθηκε ο αποκλεισμός της κάρτας SIM. Η συσκευή σας ξεκλειδώνεται\u2026</string>  
+</resources>

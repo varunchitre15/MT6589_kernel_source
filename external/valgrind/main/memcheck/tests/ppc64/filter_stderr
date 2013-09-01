@@ -1,0 +1,15 @@
+#! /bin/sh
+
+../filter_stderr
+#! /bin/sh
+
+../filter_stderr
+#! /bin/sh
+
+../filter_stderr
+#! /bin/sh
+
+../filter_stderr
+#! /bin/sh
+
+../filter_stderr "$@"

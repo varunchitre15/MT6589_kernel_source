@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sdcard_missing_message">آپ کے آلے میں SD کارڈ نصب نہيں ہے۔</string>  
+    <string name="sdcard_missing_message_nosdcard">آپ کے آلے میں USB ذخیرہ نہيں ہے۔</string>  
+</resources>
+

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+make STANDALONE_BUILD=yes CUSTOM_SEC_SIGNTOOL_SUPPORT=yes

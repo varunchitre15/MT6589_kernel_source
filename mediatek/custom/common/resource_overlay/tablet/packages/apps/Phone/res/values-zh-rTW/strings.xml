@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="no_sip_account_found">"這個裝置上沒有任何網路電話帳戶，要立即新增一個帳戶？"</string>
+    <string name="ota_progress">"裝置正在進行程式化設定，請稍候。"</string>
+    <string name="ota_skip_activation_dialog_message">"如果您不啟用裝置，就無法打電話或連線至行動服務資料網路 (透過這個資料網路，可連線至 Wi-Fi 網路)。每次一開機，系統就會詢問您是否要啟用裝置，直到您啟用為止。"</string>
+    <string name="ota_successful">"您的裝置已啟用；系統最多可能需要 15 分鐘，才會開始提供服務。"</string>
+    <string name="ota_title_activate">"啟用您的裝置"</string>    
+    <string name="ota_title_activate_success">"裝置已啟用！"</string>
+    <string name="ota_touch_activate">"如要啟用裝置服務，您必須撥打一通特殊電話。"\n\n"按下 [啟用] 後，請聽取裝置啟用說明。"</string>
+    <string name="ota_unsuccessful">"您的裝置尚未啟用。"\n"建議您移到收訊較佳的地方 (例如窗邊或戶外)。"\n\n"請再試一次，或向客戶服務中心洽詢其他啟用方式。"</string>    
+    <string name="puk_unlocked">"您的 SIM 卡已解鎖。正在解鎖裝置中..."</string>
+</resources>

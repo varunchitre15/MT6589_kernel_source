@@ -1,0 +1,12 @@
+kernel/mediatek/kernel/drivers/aee/aed/aed.ko
+kernel/mediatek/kernel/drivers/aee/ipanic/ipanic.ko
+kernel/mediatek/kernel/drivers/bthid/hid_keyboard.ko
+kernel/mediatek/kernel/drivers/gps/gps.ko
+kernel/mediatek/kernel/drivers/leds/leds.ko
+kernel/mediatek/kernel/drivers/thermal/mtk_thermal_monitor.ko
+kernel/mediatek/kernel/drivers/thermal/mtk_cooler_shutdown.ko
+kernel/mediatek/kernel/drivers/thermal/mtk_cooler_backlight.ko
+kernel/mediatek/kernel/drivers/thermal/mtk_cooler_kshutdown.ko
+kernel/mediatek/kernel/drivers/thermal/mtk_ts_pa_thput.ko
+kernel/mediatek/kernel/drivers/usb20/musb_hdrc.ko
+kernel/mediatek/kernel/drivers/wdk/wd_kicker.ko

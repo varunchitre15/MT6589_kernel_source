@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="no_sip_account_found">Nincs internethívás fiók ezen az eszközön. Hozzáad egyet?</string>  
+    <string name="ota_progress">Várjon, amíg megtörténik eszközének programozása.</string>  
+    <string name="ota_skip_activation_dialog_message">Ha mellőzi az aktiválást, nem indíthat hívást vagy csatlakozhat mobilhálózathoz (bár csatlakozhat Wi-Fi hálózathoz). Amíg nem aktiválja eszközét, minden bekapcsolás alkalmával, felkéri arra, hogy aktiválja.</string>  
+    <string name="ota_successful">Az eszköze aktiválva van. A szolgáltatás indulása akár 15 percet is igénybe vehet.</string>  
+    <string name="ota_title_activate">Az eszköz aktiválása</string>  
+    <string name="ota_title_activate_success">Az eszköz aktiválva!</string>  
+    <string name="ota_touch_activate">Különleges hívást kell végezni az eszköz szolgáltatásának aktiválásához. \n\nAz \u201CAktiválás\u201D, gomb megnyomása után hallgassa meg az utasításokat az eszköz aktiválásához.</string>  
+    <string name="ota_unsuccessful">Az eszköze nem aktiválódott. \nLehet, hogy jobb térerővel rendelkező területet kell keresnie (ablak közelében vagy a szabadban). \n\nPróbálja újra, vagy hívja az ügyfélszolgálatot további lehetőségekért.</string>  
+    <string name="puk_unlocked">Megtörtént SIM-kártyájának feloldása. Ezközének kioldása folyamatban\u2026</string>  
+</resources>

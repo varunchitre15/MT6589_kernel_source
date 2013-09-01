@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="no_sip_account_found">اين دستگاه فاقد حساب تماس اينترنتی است. يک حساب اضافه می کنيد؟</string>  
+    <string name="ota_progress">لطفاً صبر کنيد تا دستگاه شما برنامه ريزی شود.</string>  
+    <string name="ota_skip_activation_dialog_message">اگر از مرحله فعال سازی عبور کنيد، برقراری تماس يا اتصال به شبکه های داده ای همراه ممکن نخواهد بود (هرچند می توانيد به شبکه های Wi-Fi وصل شويد). تا زمانی که دستگاه خود را فعال نکنيد، با هر بار روشن کردن دستگاه فعال سازی آن از شما خواسته می شود.</string>  
+    <string name="ota_successful">دستگاه شما فعال شد. شروع ارائه سرويس ممکن است تا 15 دقيقه طول بکشد.</string>  
+    <string name="ota_title_activate">فعال سازی دستگاه</string>  
+    <string name="ota_title_activate_success">دستگاه فعال شد!</string>  
+    <string name="ota_touch_activate">برای فعال کردن سرويس دستگاه شما يک تماس ويژه بايد برقرار شود.\n\nپس از فشردن \u201Cفعال سازی\u201D، برای فعال کردن دستگاه خود به دستورالعمل ها گوش دهيد.</string>  
+    <string name="ota_unsuccessful">دستگاه شما فعال نشد.\nاحتمالاً بايد منطقه ای با پوشش بهتر (نزديک پنجره يا خارج از ساختمان) پيدا کنيد.\n\nدوباره امتحان کنيد يا برای آگاه شدن از ساير گزينه ها با خدمات مشتری تماس بگيريد.</string>  
+    <string name="puk_unlocked">انسداد سيم کارت شما رفع شد. در حال باز کردن قفل دستگاه\u2026</string>  
+</resources>

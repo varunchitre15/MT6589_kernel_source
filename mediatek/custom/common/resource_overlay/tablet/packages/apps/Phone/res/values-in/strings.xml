@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="no_sip_account_found">Tidak ada account panggilan Internet di perangkat ini. Tambahkan sekarang?</string>  
+    <string name="ota_progress">Tunggu sewaktu perangkat sedang diprogram.</string>  
+    <string name="ota_skip_activation_dialog_message">Jika Anda melewati pengaktifan, maka panggilan maupun sambungan ke jaringan data selular tidak dapat dilakukan (meskipun Anda dapat tersambung ke jaringan Wi-Fi). Hingga mengaktifkan perangkat berikutnya, Anda akan diminta untuk mengaktifkannya setiap kali mengaktifkan perangkat.</string>  
+    <string name="ota_successful">Perangkat Anda kini telah diaktifkan. Mungkin diperlukan waktu 15 menit agar layanan dapat dimulai.</string>  
+    <string name="ota_title_activate">Aktifkan perangkat</string>  
+    <string name="ota_title_activate_success">Perangkat telah diaktifkan!</string>  
+    <string name="ota_touch_activate">Panggilan khusus harus dilakukan untuk mengaktifkan layanan perangkat.\n\nSetelah menekan \u201CAktifkan\u201D, dengarkan petunjuk yang tersedia untuk mengaktifkan perangkat.</string>  
+    <string name="ota_unsuccessful">Perangkat Anda tidak diaktifkan.\nAnda mungkin harus menemukan area dengan jangkauan yang lebih baik (di dekat jendela atau di luar ruangan).\n\nCoba kembali atau hubungi layanan pelanggan untuk mengetahui pilihan lainnya.</string>  
+    <string name="puk_unlocked">Pemblokiran kartu SIM Anda telah dibatalkan. Perangkat membuka penguncian\u2026</string>  
+</resources>

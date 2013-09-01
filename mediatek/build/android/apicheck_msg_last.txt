@@ -1,0 +1,7 @@
+
+******************************
+You have tried to change MTK SDK API, which is prohibited. Please fix the errors listed above by 
+restoring the changes.
+******************************
+
+

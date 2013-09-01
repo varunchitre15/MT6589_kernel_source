@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="sdcard_full">Tablet storage is full.</string>
+</resources>

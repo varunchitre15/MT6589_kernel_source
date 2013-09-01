@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="aerr_application_lowmem">O armazenamento do tablet está cheio, a aplicação parou. Liberte espaço e tente novamente.</string>  
+    <string name="aerr_process_lowmem">O armazenamento do tablet está cheio, o processo parou. Liberte espaço e tente novamente.</string> 
+    <string name="criticallowmessage">O dispositivo de armazenamento está cheio, elimine ficheiros desnecessários, caso contrário a aplicação poderá terminar inesperadamente</string>  
+</resources>

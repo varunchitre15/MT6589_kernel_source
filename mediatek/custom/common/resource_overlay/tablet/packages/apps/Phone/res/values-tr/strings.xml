@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="no_sip_account_found">Bu aygıtta hiç Internet arama hesabı yok. Şimdi ekleyecek misiniz?</string>  
+    <string name="ota_progress">Aygıtınız programlanırken lütfen bekleyin.</string>  
+    <string name="ota_skip_activation_dialog_message">Etkinleştirmeyi atlarsanız, arama yapamaz ve mobil veri ağlarına bağlanamazsınız (ancak Wi-Fi ağlarına bağlanabilirsiniz). Etkinleştirinceye kadar aygıtınızı her açışınızda etkinleştirmek isteyip istemediğiniz sorulur.</string>  
+    <string name="ota_successful">Aygıtınız etkinleştirildi. Hizmetin başlaması 15 dakika kadar sürebilir.</string>  
+    <string name="ota_title_activate">Aygıtınızı etkinleştirin</string>  
+    <string name="ota_title_activate_success">Aygıt etkinleştirildi!</string>  
+    <string name="ota_touch_activate">Aygıtınızı etkinleştirmek için özel bir arama yapılması gerekiyor. \n\n\u201CEtkinleştir\u201D tuşuna bastıktan sonra, aygıtınızı etkinleştirmek için sağlanan talimatları dinleyin.</string>  
+    <string name="ota_unsuccessful">Aygıtınız etkinleştirilmedi. \nDaha iyi kapsama olan bir yer (pencere kenarı veya dış mekan) bulmanız gerekebilir. \n\nYeniden deneyin veya diğer seçenekler için müşteri hizmetlerini arayın.</string>  
+    <string name="puk_unlocked">SIM kartınızın engellemesi kaldırıldı. Aygıtınızın kilidi açılıyor\u2026</string>  
+</resources>

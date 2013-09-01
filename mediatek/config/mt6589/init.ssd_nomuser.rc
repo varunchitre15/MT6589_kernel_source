@@ -1,0 +1,33 @@
+# MTK project .rc configure 
+
+	
+#
+# NO SHARED_SDCARD feature option
+#
+
+on init
+    mkdir /storage/sdcard0 0000 system system
+    mkdir /storage/sdcard1 0000 system system
+
+    export EXTERNAL_STORAGE /storage/sdcard0
+    export SECONDARY_STORAGE /storage/sdcard1
+
+    # for backwards compatibility
+    symlink /storage/sdcard0 /sdcard
+    symlink /storage/sdcard0 /mnt/sdcard
+    symlink /storage/sdcard1 /mnt/sdcard2
+    
+on boot
+#
+# SHARED_SDCARD related services (Begin)
+#
+
+# create virtual SD card at /mnt/sdcard, based on the /data/media directory
+# daemon will drop to user/group system/media_rw after initializing
+# underlying files in /data/media will be created with user and group media_rw (1023)
+service sdcard /system/bin/sdcard /data/media /storage/sdcard0  1023 1023
+class late_start
+
+#
+# SHARED_SDCARD related services (End)
+#

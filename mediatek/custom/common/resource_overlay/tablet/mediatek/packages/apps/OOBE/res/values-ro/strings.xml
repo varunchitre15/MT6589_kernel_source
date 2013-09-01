@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">  
+    <string name="oobe_summary_import_contacts">Selectaţi unele sau toate cartelele SIM introduse pentru a importa persoanele de contact în tabletă.</string> 
+    <string name="oobe_summary_language_setting">Selectaţi limba de utilizare a tabletei</string>  
+</resources>

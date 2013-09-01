@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">  
+    <string name="oobe_summary_import_contacts">Chọn một số hoặc mọi thẻ SIM đã lắp của bạn để nhập danh bạ vào máy tính bảng.</string> 
+    <string name="oobe_summary_language_setting">Chọn ngôn ngữ dùng cho máy tính bảng của bạn</string>  
+</resources>

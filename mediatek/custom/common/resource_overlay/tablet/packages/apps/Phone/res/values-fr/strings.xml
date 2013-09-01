@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="no_sip_account_found">"Aucun compte d'appel Internet sur cet appareil. En ajouter un maintenant?"</string>  
+    <string name="ota_progress">Veuillez patienter durant la programmation de votre appareil.</string>  
+    <string name="ota_skip_activation_dialog_message">"Si vous n'activez pas votre appareil vous ne pourrez pas passer d'appels ni vous connecter aux réseaux de données mobiles (mais vous pourrez vous connecter aux réseaux Wi-Fi). Un message vous demandera d'activer votre appareil à chaque démarrage jusqu'à l'activation."</string>  
+    <string name="ota_successful">"Votre appareil a été activé. Le lancement du service peut prendre jusqu'à 15 minutes."</string>  
+    <string name="ota_title_activate">Activez votre appareil</string>  
+    <string name="ota_title_activate_success">Appareil activé!</string>  
+    <string name="ota_touch_activate">Un appel spécial doit être passé pour activer votre service.\n\nAprès avoir appuyé sur\u201CActiver\u201D, écoutez les instructions données pour activer votre appareil.</string>  
+    <string name="ota_unsuccessful">"Votre appareil n'a pas été activé.\nEssayez de trouver une meilleure couverture réseau (près d'une fenêtre ou à l'extérieur).\n\nRéessayez ou appelez notre service clientèle pour plus d'options."</string>  
+    <string name="puk_unlocked">Votre carte SIM a été débloquée. Votre appareil déverrouille\u2026</string>  
+</resources>

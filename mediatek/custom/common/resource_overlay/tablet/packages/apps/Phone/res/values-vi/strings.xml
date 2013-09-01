@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="no_sip_account_found">Không có các tài khoản gọi internet trên thiết bị này. Thêm ngay?</string>  
+    <string name="ota_progress">Hãy đợi trong khi thiết bị đang được cài đặt.</string>  
+    <string name="ota_skip_activation_dialog_message">Nếu bỏ qua kích hoạt, bạn không thể thực hiện cuộc gọi hoặc k.nối với các mạng dữ liệu di động (dù bạn có thể k.nối với mạng Wi-Fi). Cho đến khi kích hoạt thiết bị, bạn được yêu cầu kích hoạt nó mỗi khi bật thiết bị.</string>  
+    <string name="ota_successful">Thiết bị của bạn đã được k.hoạt. Có thể mất đến 15 phút để dịch vụ khởi động.</string>  
+    <string name="ota_title_activate">Hãy kích hoạt thiết bị</string>  
+    <string name="ota_title_activate_success">Thiết bị đã được kích hoạt!</string>  
+    <string name="ota_touch_activate">Cần thực hiện cuộc gọi đặc biệt để kích hoạt d.vụ trên thiết bị của bạn. \n\nSau khi bấm \u201CActivate\u201D, nghe các hướng dẫn có sẵn để kích hoạt thiết bị của bạn.</string>  
+    <string name="ota_unsuccessful">Thiết bị của bạn chưa được k.hoạt. \nBạn có thể cần tìm vùng phủ sóng tốt hơn (gần cửa sổ hoặc ngoài trời). \n\nThử lại hoặc gọi d.vụ kh.hàng để có thêm lựa chọn.</string>  
+    <string name="puk_unlocked">SIM của bạn đã được mở khóa. Thiết bị của bạn đang mở khóa\u2026</string>  
+</resources>

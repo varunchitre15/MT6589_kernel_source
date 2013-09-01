@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gemini_sim_tether_nocontacts">平板電腦中沒有﻿可用的聯繫人。請先添加或導入聯繫人。</string>    
+    <string name="wifi_ap_bandwidth_chart_summary">依據您的平板電腦而定，電信業者的資料速度帳戶可能有所不同。</string>  
+</resources>

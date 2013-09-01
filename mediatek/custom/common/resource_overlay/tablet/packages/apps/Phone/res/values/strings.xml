@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" xmlns:tools="http://schemas.android.com/tools">
+    <string name ="no_sip_account_found">There are no Internet calling accounts on this device.  Add one now?</string>
+    <string name="ota_progress">Please wait while your device is being programmed.</string>
+    <string name="ota_skip_activation_dialog_message">If you skip activation, you can\'t place calls or connect to mobile data networks (though you can connect to Wi-Fi networks). Until you activate your device, you are asked to activate it each time you turn it on.</string>
+    <string name="ota_successful">Your device is now activated.  It may take up to 15 minutes for service to start.</string>
+    <string name="ota_title_activate">Activate your device</string>
+    <string name="ota_title_activate_success">Device is activated!</string>
+    <string name="ota_touch_activate">A special call needs to be made to activate your device service. \n\nAfter pressing \u201CActivate\u201D, listen to the instructions provided to activate your device.</string>
+    <string name="ota_unsuccessful">Your device did not activate. \nYou may need to find an area with better coverage (near a window, or outside). \n\nTry again or call customer service for more options.</string>
+    <string name="puk_unlocked">Your SIM card has been unblocked. Your device is unlocking\u2026</string>
+</resources>

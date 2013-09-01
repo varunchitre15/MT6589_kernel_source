@@ -1,0 +1,2 @@
+This directory contains tests for ThreadSanitizerOffline.
+Experimental. See ts_offline.cc for details.

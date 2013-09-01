@@ -1,0 +1,142 @@
+<project basedir="." default="all">
+	
+	<import file="${jazz_build_toolkit}/BuildToolkitTaskDefs.xml"/>
+
+	<target name="all" depends="build,publish"/>
+
+	<target name="build">
+		<startBuildActivity label="Compiling"
+			activityIdProperty="compilingActivityId"
+			buildResultUUID="${buildResultUUID}"
+			repositoryAddress="${repositoryAddress}"
+			verbose="true"
+			userId="erichsieh"
+			passwordFile="${build_home}/buildPass.txt"/>
+
+		<exec executable="bash">
+			<arg value="${Build_Script}"/>
+			<arg value="${project1}"/>
+			<arg value="${project2}"/>
+			<arg value="${project3}"/>
+			<arg value="${project4}"/>
+			<arg value="${svn}"/>
+			<arg value="${type}"/>
+			<arg value="${SW_Prefix}"/>
+			<arg value="${SW_SubVersion}"/>
+			<arg value="${buildLabel}"/>
+			<arg value="${password}"/>
+			<arg value="${signimage}"/>
+			<arg value="${BuildType}"/>
+			<arg value="${flex}"/>
+			<arg value="${AUTO_VERSION}"/>
+			<arg value="${SW_Version_Delta}"/>
+			<arg value="${SW_Version_Delta_Day}"/>
+			<arg value="${SW_Version_Increase_Day}"/>
+			<arg value="${Security_key}"/>
+			<arg value="${HW_Version}"/>
+		</exec>
+
+		<completeBuildActivity activityId="${compilingActivityId}"
+			buildResultUUID="${buildResultUUID}"
+			repositoryAddress="${repositoryAddress}"
+			verbose="true"
+			userId="erichsieh"
+			passwordFile="${build_home}/buildPass.txt"/>
+	</target>
+
+        <target name="publish">
+		<startBuildActivity label="Publishing Artifacts"
+			activityIdProperty="publishingActivityId"
+			buildResultUUID="${buildResultUUID}"
+			repositoryAddress="${repositoryAddress}"
+			verbose="true"
+			userId="erichsieh"
+			passwordFile="${build_home}/buildPass.txt"/>
+                
+                <ftp action="mkdir"
+                        server="buildartifact.arimacomm.com.tw"
+                        userid="ftp5860"
+                        password="ftp5860"
+                        remotedir="/${buildResultUUID}"/>
+
+                <ftp server="buildartifact.arimacomm.com.tw"
+                        userid="ftp5860"
+                        password="ftp5860"
+                        remotedir="/${buildResultUUID}">
+                        <fileset file="${build_home}/Images_${BuildType}_${project1}_${svn}.${type}.${buildLabel}.tar.7z"/>
+                        <fileset file="${build_home}/Symbols_${BuildType}_${project1}_${svn}.${type}.${buildLabel}.tar.7z"/>
+                        <fileset file="${build_home}/Images_${BuildType}_${project1}_${svn}.${type}.${buildLabel}/5860_SW.xls"/>
+                </ftp>
+         
+                <ftp server="172.17.97.13"
+                        userid="erichsieh"
+                        password="erichsieh"
+                        remotedir="/home/erichsieh/DataDisk/Images/DailyBuld/CN3">
+                        <fileset file="${build_home}/Images_${BuildType}_${project1}_${svn}.${type}.${buildLabel}.tar.7z"/>
+
+                </ftp>
+                        
+                <ftp server="172.17.97.13"
+                        userid="erichsieh"
+                        password="erichsieh"
+                        remotedir="/home/erichsieh/DataDisk/SourceCode/DailyBuild/CN3">
+                        <fileset file="${build_home}/SourceCode*.tar.7z"/>                        
+                </ftp>
+                
+                <artifactLinkPublisher repositoryAddress="${repositoryAddress}"
+                       buildResultUUID="${buildResultUUID}"
+                       userID="erichsieh"
+                       passwordFile="${build_home}/buildPass.txt"
+                       url="ftp://buildartifact.arimacomm.com.tw/5860/${buildResultUUID}/Images_ENG_${project1}_${svn}.${type}.${buildLabel}.tar.7z"
+                       label="Images_ENG_${project1}_${svn}.${type}.${buildLabel}"/>                     
+                        
+                 <artifactLinkPublisher repositoryAddress="${repositoryAddress}"
+                       buildResultUUID="${buildResultUUID}"
+                       userID="erichsieh"
+                       passwordFile="${build_home}/buildPass.txt"
+                       url="ftp://buildartifact.arimacomm.com.tw/5860/${buildResultUUID}/Symbols_ENG_${project1}_${svn}.${type}.${buildLabel}.tar.7z"
+                       label="Symbols_ENG_${project1}_${svn}.${type}.${buildLabel}"/>                     
+                  
+                  <artifactLinkPublisher repositoryAddress="${repositoryAddress}"
+                       buildResultUUID="${buildResultUUID}"
+                       userID="erichsieh"
+                       passwordFile="${build_home}/buildPass.txt"
+                       url="ftp://buildartifact.arimacomm.com.tw/5860/${buildResultUUID}/Images_USER_${project1}_${svn}.${type}.${buildLabel}.tar.7z"
+                       label="Images_USER_${project1}_${svn}.${type}.${buildLabel}"/>                     
+                        
+                 <artifactLinkPublisher repositoryAddress="${repositoryAddress}"
+                       buildResultUUID="${buildResultUUID}"
+                       userID="erichsieh"
+                       passwordFile="${build_home}/buildPass.txt"
+                       url="ftp://buildartifact.arimacomm.com.tw/5860/${buildResultUUID}/Symbols_USER_${project1}_${svn}.${type}.${buildLabel}.tar.7z"
+                       label="Symbols_USER_${project1}_${svn}.${type}.${buildLabel}"/>                     
+                            
+                <artifactLinkPublisher repositoryAddress="${repositoryAddress}"
+                       buildResultUUID="${buildResultUUID}"
+                       userID="erichsieh"
+                       passwordFile="${build_home}/buildPass.txt"
+                       url="ftp://buildartifact.arimacomm.com.tw/5860/${buildResultUUID}/Images_USERDBG_${project1}_${svn}.${type}.${buildLabel}.tar.7z"
+                       label="Images_USERDBG_${project1}_${svn}.${type}.${buildLabel}"/>                     
+                        
+                 <artifactLinkPublisher repositoryAddress="${repositoryAddress}"
+                       buildResultUUID="${buildResultUUID}"
+                       userID="erichsieh"
+                       passwordFile="${build_home}/buildPass.txt"
+                       url="ftp://buildartifact.arimacomm.com.tw/5860/${buildResultUUID}/Symbols_USERDBG_${project1}_${svn}.${type}.${buildLabel}.tar.7z"
+                       label="Symbols_USERDBG_${project1}_${svn}.${type}.${buildLabel}"/>                       
+                            
+                <artifactLinkPublisher repositoryAddress="${repositoryAddress}"
+                       buildResultUUID="${buildResultUUID}"
+                       userID="erichsieh"
+                       passwordFile="${build_home}/buildPass.txt"
+                       url="ftp://buildartifact.arimacomm.com.tw/5860/${buildResultUUID}/5860_SW.xls"
+                       label="Change Note"/>
+
+		<completeBuildActivity activityId="${publishingActivityId}"
+			buildResultUUID="${buildResultUUID}"
+			repositoryAddress="${repositoryAddress}"
+			verbose="true"
+			userId="erichsieh"
+			passwordFile="${build_home}/buildPass.txt"/>
+	</target>
+</project>

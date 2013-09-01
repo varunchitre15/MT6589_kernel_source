@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="no_sip_account_found">Dit toestel bevat geen accounts voor internetbellen. Wilt u er nu een toevoegen?</string>  
+    <string name="ota_progress">Wacht even totdat uw toestel is geprogrammeerd.</string>  
+    <string name="ota_skip_activation_dialog_message">Als u de activatie overslaat, kunt u niet bellen of verbinding maken met mobiele gegevensnetwerken (al kunt u wel verbinding maken met Wi-Fi-netwerken). Totdat u uw toestel hebt geactiveerd, wordt u telkens bij het aanzetten gevraagd om het te activeren.</string>  
+    <string name="ota_successful">Uw toestel is nu geactiveerd. Het kan maximaal vijftien minuten duren voordat de service actief is.</string>  
+    <string name="ota_title_activate">Activeer uw toestel.</string>  
+    <string name="ota_title_activate_success">Het toestel is geactiveerd!</string>  
+    <string name="ota_touch_activate">U moet een speciale oproep uitvoeren om uw toestelservice te activeren. \n\nDruk op \u201CActiveren\u201D en uister naar de aanwijzingen voor het activeren van het toestel.</string>  
+    <string name="ota_unsuccessful">Uw toestel is niet geactiveerd. \nZoek een plek waar u een betere dekking hebt (in de buurt van een raam of buiten). \n\nProbeer het opnieuw of bel de klantenservice voor meer opties.</string>  
+    <string name="puk_unlocked">Uw SIM-kaart is gedeblokkeerd. Uw toestel wordt nu vrijgegeven\u2026</string>  
+</resources>

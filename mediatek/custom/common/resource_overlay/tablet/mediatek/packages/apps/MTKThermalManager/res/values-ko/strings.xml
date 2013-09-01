@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resources> 
+    <string name="alert_dialog_two_buttons_message">태블릿을 즉시 냉각시켜야 합니다!</string> 
+</resources>

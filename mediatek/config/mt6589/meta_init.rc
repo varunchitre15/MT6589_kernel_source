@@ -1,0 +1,350 @@
+# Copyright (C) 2012 The Android Open Source Project
+#
+# IMPORTANT: Do not create world writable files or directories.
+# This is a common source of Android security bugs.
+#
+
+on early-init
+    # Set init and its forked children's oom_adj.
+    write /proc/1/oom_adj -16
+
+    start ueventd
+
+# create mountpoints
+    mkdir /mnt 0775 root system
+    
+    mkdir /storage 0055 system sdcard_r
+    mkdir /storage/sdcard0 0000 system system
+    mkdir /storage/sdcard1 0000 system system
+    mkdir /mnt/cd-rom 0000 system system
+    # for backwards compatibility
+    symlink /storage/sdcard0 /sdcard
+    symlink /storage/sdcard0 /mnt/sdcard
+    symlink /storage/sdcard1 /mnt/sdcard2
+
+
+on init
+
+sysclktz 0
+
+loglevel 5
+    write /proc/bootprof "INIT: on init start"
+
+# setup the global environment
+    export PATH /sbin:/vendor/bin:/system/sbin:/system/bin:/system/xbin
+    export LD_LIBRARY_PATH /vendor/lib:/system/lib
+    export ANDROID_ROOT /system
+    export ANDROID_DATA /data
+    #export EXTERNAL_STORAGE /mnt/sdcard
+    export EXTERNAL_STORAGE /storage/sdcard0
+    export SECONDARY_STORAGE /storage/sdcard1
+    export ASEC_MOUNTPOINT /mnt/asec
+    export LOOP_MOUNTPOINT /mnt/obb
+
+# Backward compatibility
+    symlink /system/etc /etc
+    symlink /sys/kernel/debug /d
+
+# Right now vendor lives on the same filesystem as system,
+# but someday that may change.
+    symlink /system/vendor /vendor   
+
+# Create cgroup mount point for cpu accounting
+    mkdir /acct
+    mount cgroup none /acct cpuacct
+    mkdir /acct/uid
+
+    symlink /mnt/sdcard /sdcard
+    mkdir /system
+    mkdir /data 0771 system system
+    mkdir /cache 0770 system cache
+    mkdir /config 0500 root root
+
+    # Directory for putting things only root should see.
+    mkdir /mnt/secure 0700 root root
+
+    # Directory for staging bindmounts
+    mkdir /mnt/secure/staging 0700 root root
+
+    # Directory-target for where the secure container
+    # imagefile directory will be bind-mounted
+    mkdir /mnt/secure/asec  0700 root root
+
+    # Secure container public mount points.
+    mkdir /mnt/asec  0700 root system
+    mount tmpfs tmpfs /mnt/asec mode=0755,gid=1000
+
+    # Filesystem image public mount points.
+    mkdir /mnt/obb 0700 root system
+    mount tmpfs tmpfs /mnt/obb mode=0755,gid=1000
+
+    write /proc/sys/kernel/panic_on_oops 1
+    write /proc/sys/kernel/hung_task_timeout_secs 0
+    write /proc/cpu/alignment 4
+    write /proc/sys/kernel/sched_latency_ns 10000000
+    write /proc/sys/kernel/sched_wakeup_granularity_ns 2000000
+    write /proc/sys/kernel/sched_compat_yield 1
+    
+# mount different fs start
+
+on fs_property:ro.mount.fs=YAFFS
+# mount mtd partitions
+    # Mount /system rw first to give the filesystem a chance to save a checkpoint
+    write /proc/bootprof "INIT:NAND:Mount_START"    
+    mount yaffs2 mtd@system /system
+    mkdir /system/secro 0600 system system
+    mount yaffs2 mtd@system /system ro remount
+    mount yaffs2 mtd@userdata /data nosuid nodev
+    # mount secro partition
+    mount yaffs2 mtd@secstatic /system/secro ro
+    write /proc/bootprof "INIT:NAND:Mount_END"
+
+on fs_property:ro.mount.fs=EXT4
+    write /proc/bootprof "INIT:eMMC:Mount_START"
+    exec /sbin/e2fsck -p /emmc@android
+    # Mount /system rw first to give the filesystem a chance to save a checkpoint
+    #mount ext4 emmc@android /system wait commit=1,data=journal,noauto_da_alloc
+    mount ext4 /emmc@android /system wait commit=1,noauto_da_alloc
+    mkdir /system/secro 0600 system system
+    mount ext4 /emmc@android /system noatime ro remount wait 
+    exec /sbin/e2fsck -pfD /emmc@usrdata
+    exec /sbin/tune2fs -O has_journal /emmc@usrdata
+    exec /system/bin/ext4_resize
+    mount ext4 /emmc@usrdata /data noatime nosuid nodev wait commit=1,nodelalloc,noauto_da_alloc	
+    mount ext4 /emmc@sec_ro /system/secro ro wait
+    write /proc/bootprof "INIT:eMMC:Mount_END"
+
+on fs_property:ro.mount.fs=UBIFS
+    write /proc/bootprof "INIT:NAND:Mount_START"
+    mount ubifs ubi@system /system
+    mkdir /system/secro 0600 system system
+    mount ubifs ubi@system /system ro remount
+    mount ubifs ubi@userdata /data nosuid nodev
+    mount ubifs ubi@cache /cache nosuid nodev
+    mount ubifs ubi@secstatic /system/secro ro
+    write /proc/bootprof "INIT:NAND:Mount_END"
+# mount different fs end
+
+on post-fs
+    # once everything is setup, no need to modify /
+    mount rootfs rootfs / rw remount
+    
+    # We chown/chmod /cache again so because mount is run as root + defaults
+    chown system cache /cache
+    chmod 0770 /cache
+
+    #change permissions on kmsg & sysrq-trigger so bugreports can grab kthread stacks
+    chown root system /proc/kmsg
+    chmod 0440 /proc/kmsg
+
+    chown system system /data
+    chmod 0771 /data
+
+# create basic filesystem structure
+		mkdir /data/nvram 0770 root nvram
+    mkdir /data/misc 01771 system misc
+    mkdir /data/misc/bluetoothd 0770 bluetooth bluetooth
+    mkdir /data/misc/bluetooth 0770 system system
+    mkdir /data/misc/keystore 0700 keystore keystore
+    mkdir /data/misc/keychain 0771 system system
+    mkdir /data/misc/vpn 0770 system vpn
+    mkdir /data/misc/systemkeys 0700 system system
+    # give system access to wpa_supplicant.conf for backup and restore
+    mkdir /data/misc/wifi 0770 wifi wifi
+    chmod 0660 /data/misc/wifi/wpa_supplicant.conf
+    chmod 0660 /data/misc/wifi/p2p_supplicant.conf
+    mkdir /data/local 0751 root root
+    # For security reasons, /data/local/tmp should always be empty.
+    # Do not place files or directories in /data/local/tmp
+    mkdir /data/local/tmp 0771 shell shell
+    mkdir /data/data 0771 system system
+    mkdir /data/app-private 0771 system system
+    mkdir /data/app-asec 0700 root root
+    mkdir /data/app 0771 system system
+    mkdir /data/property 0700 root root
+    mkdir /data/ssh 0750 root shell
+    mkdir /data/ssh/empty 0700 root root
+
+    # create the lost+found directories, so as to enforce our permissions
+    mkdir /data/lost+found 0770
+
+    # double check the perms, in case lost+found already exists, and set owner
+    chown root root /data/lost+found
+    chmod 0770 /data/lost+found
+
+    # H264 Decoder
+    chmod 777 /dev/MT6516_H264_DEC
+
+    # Internal SRAM Driver
+    chmod 777 /dev/MT6516_Int_SRAM
+
+    # MM QUEUE Driver
+    chmod 777 /dev/MT6516_MM_QUEUE
+
+    # MPEG4 Decoder
+    chmod 777 /dev/MT6516_MP4_DEC
+
+    # MPEG4 Encoder
+    chmod 777 /dev/MT6516_MP4_ENC
+
+    # OpenCORE proxy config
+    chmod 0666 /data/http-proxy-cfg
+
+	# OpenCORE player config
+	chmod 0666 /etc/player.cfg
+
+    # load driver base driver
+    insmod /system/lib/modules/mtk_drvb_73.ko
+    mknod /dev/drvb c 176 0
+    chmod 0666 /dev/drvb
+
+    # WiFi
+    mkdir /data/misc/wifi 0770 system wifi
+    mkdir /data/misc/wifi/sockets 0770 system wifi
+    mkdir /data/system/wpa_supplicant 0770 system wifi
+    mkdir /data/misc/dhcp 0770 dhcp dhcp
+    chown dhcp dhcp /data/misc/dhcp
+    chmod 0660 /sys/class/rfkill/rfkill1/state 
+    chown system system /sys/class/rfkill/rfkill1/state 
+    # Turn off wifi by default
+    write /sys/class/rfkill/rfkill1/state 0
+
+
+
+    #otp
+    chmod 0660 /dev/otp
+    chown root nvram /dev/otp
+
+    # Touch Panel
+    chown system system /sys/touchpanel/calibration
+    chmod 0660 /sys/touchpanel/calibration
+
+    chmod 0777 /dev/pmem_multimedia
+    chmod 0777 /dev/mt6516-isp
+    chmod 0777 /dev/mt6516-IDP
+    chmod 0777 /dev/mt9p012
+    chmod 0777 /dev/mt6516_jpeg
+    chmod 0777 /dev/FM50AF
+
+
+
+    # RTC
+    mkdir /data/misc/rtc 0770 system system
+
+
+    # M4U
+    #insmod /system/lib/modules/m4u.ko
+    #mknod /dev/M4U_device c 188 0
+    chmod 0444 /dev/M4U_device
+    	
+    # Sensor
+    chmod 0666 /dev/sensor
+
+    # GPIO
+    chmod 0666 /dev/mtgpio
+
+    # Android SEC related device nodes
+    insmod /system/lib/modules/sec.ko
+    mknod /dev/sec c 182 0
+    chmod 0660 /dev/sec
+    chown root system /dev/sec
+    
+    # device info interface
+    insmod /system/lib/modules/devinfo.ko
+    mknod /dev/devmap c 196 0;
+    chmod 0444 /dev/devmap
+    chown root media /dev/devmap
+
+on post-fs-data
+
+# Encrypt phone function
+    setprop vold.post_fs_data_done 1
+
+on property:vold.decrypt=trigger_reset_main
+    class_reset main
+
+on property:vold.decrypt=trigger_load_persist_props
+    load_persist_props
+
+on property:vold.decrypt=trigger_post_fs_data
+    trigger post-fs-data
+
+on property:vold.decrypt=trigger_restart_min_framework
+    class_start main
+
+on property:vold.decrypt=trigger_restart_framework
+    start permission_check
+    class_start main
+    class_start late_start
+
+on property:vold.decrypt=trigger_shutdown_framework
+    class_reset late_start
+    class_reset default
+    class_reset main
+
+on boot
+   chown root /remount.sh
+   chmod 700 /remount.sh
+   exec /remount.sh
+
+# basic network init
+    ifup lo
+    hostname localhost
+    domainname localdomain
+
+    class_start default
+    start vold
+    start sdcard
+
+service ueventd /sbin/ueventd
+    class core
+    critical
+
+service console /system/bin/sh
+    class core
+    console
+    disabled
+    user root
+    group log
+
+
+service meta_tst /sbin/meta_tst	
+
+service nvram_daemon /system/bin/nvram_daemon
+    user nvram
+    group nvram system
+    oneshot
+
+service mobile_log_d /system/bin/mobile_log_d
+
+service vold /system/bin/vold
+    class core
+    socket vold stream 0660 root mount
+    ioprio be 2
+
+# adbd is controlled via property triggers in init.<platform>.usb.rc
+service adbd /sbin/adbd
+    class core
+    disabled
+
+#mass_storage,adb,acm
+on property:sys.usb.com_config=0
+    write /sys/class/android_usb/android0/iSerial $ro.serialno
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/idVendor 0bb4
+    write /sys/class/android_usb/android0/idProduct 0005
+    write /sys/class/android_usb/android0/f_acm/instances 1
+    write /sys/class/android_usb/android0/functions mass_storage,adb,acm
+    write /sys/class/android_usb/android0/enable 1
+    start adbd
+
+#acm
+on property:sys.usb.com_config=1
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/iSerial " "
+    write /sys/class/android_usb/android0/idVendor 0e8d
+    write /sys/class/android_usb/android0/idProduct 2007
+    write /sys/class/android_usb/android0/f_acm/instances 1
+    write /sys/class/android_usb/android0/functions acm
+    write /sys/class/android_usb/android0/bDeviceClass 02
+    write /sys/class/android_usb/android0/enable 1

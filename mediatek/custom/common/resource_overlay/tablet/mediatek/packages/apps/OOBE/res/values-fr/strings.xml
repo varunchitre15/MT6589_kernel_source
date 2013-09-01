@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">  
+    <string name="oobe_summary_import_contacts">Sélectionnez quelques-unes ou toutes les cartes SIM insérées pour importer vos contacts dans la tablette.</string> 
+    <string name="oobe_summary_language_setting">"Sélectionnez la langue d'utilisation de votre tablette"</string>  
+</resources>

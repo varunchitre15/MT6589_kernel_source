@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="aerr_application_lowmem">Puno na ang imbakan ng tablet,hininto ang aplikasyon. Mangyaring maglibre ng espasyo at subukan muli.</string>  
+    <string name="aerr_process_lowmem">Puno na ang imbakan ng tablet,hininto ang proseso. Mangyaring maglibre ng espasyo at subukan muli.</string> 
+    <string name="criticallowmessage">Puno na ang imbakan ng aparato, mangyaring tanggalin ang mga file na walang paggagamitan, kung hindi ang aplikasyon ay maaaring lumabas nang hindi inaasahan</string>  
+</resources>

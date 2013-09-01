@@ -1,0 +1,8 @@
+#! /bin/sh
+# tests/bison.  Generated from bison.in by configure.
+# Wrapper around a non installed bison to make it work as an installed one.
+
+# Use the shipped files, not those installed.
+BISON_PKGDATADIR='/usr/local/google/workspace/WebKit/tools/bison-2.3/tests/../data'
+export BISON_PKGDATADIR
+exec $PREBISON '/usr/local/google/workspace/WebKit/tools/bison-2.3/tests/.././src/bison' ${1+"$@"}

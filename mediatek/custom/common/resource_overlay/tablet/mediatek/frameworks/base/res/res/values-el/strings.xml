@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="aerr_application_lowmem">Ο χώρος αποθήκευσης του tablet είναι πλήρης και η λειτουργία της εφαρμογής έχει διακοπεί. Απελευθερώστε χώρο και προσπαθήστε ξανά.</string>  
+    <string name="aerr_process_lowmem">Ο χώρος αποθήκευσης του tablet είναι πλήρης και η διεργασία έχει διακοπεί. Απελευθερώστε χώρο και προσπαθήστε ξανά.</string> 
+    <string name="criticallowmessage">Ο χώρος αποθήκευσης της συσκευής είναι πλήρης. Διαγράψτε αρχεία που δεν χρειάζεστε, αλλιώς η εφαρμογή ενδέχεται να πραγματοποιήσει έξοδο απροσδόκητα</string>  
+</resources>

@@ -1,0 +1,67 @@
+#
+# system.prop for generic sdk
+#
+
+rild.libpath=/system/lib/mtk-ril.so
+rild.libargs=-d /dev/ttyC0
+
+
+# MTK, Infinity, 20090720 {
+wifi.interface=wlan0
+# MTK, Infinity, 20090720 }
+
+# MTK, mtk03034, 20101210 {
+ro.mediatek.wlan.wsc=1
+# MTK, mtk03034 20101210}
+# MTK, mtk03034, 20110318 {
+ro.mediatek.wlan.p2p=1
+# MTK, mtk03034 20110318}
+
+# MTK, mtk03034, 20101213 {
+mediatek.wlan.ctia=0
+# MTK, mtk03034 20101213}
+
+
+#
+wifi.tethering.interface=ap0
+#
+
+ro.opengles.version=131072
+
+wifi.direct.interface=p2p0
+dalvik.vm.heapgrowthlimit=128m
+dalvik.vm.heapsize=256m
+
+# USB MTP WHQL
+ro.sys.usb.mtp.whql.enable=0
+
+# Power off opt in IPO
+sys.ipo.pwrdncap=2
+
+ro.sys.usb.storage.type=mtp,mass_storage
+
+# USB BICR function
+ro.sys.usb.bicr=yes
+
+# USB Charge only function
+ro.sys.usb.charging.only=yes
+
+# audio
+ro.camera.sound.forced=0
+ro.audio.silent=0
+
+ro.zygote.preload.enable=0
+
+###Begin_Arima_HCSW7_20130429_ChrisHe - [TunderSoft] xLoud patch 20130320
+#Begin_Arima_HCSW7_20130327_SandyTan: Add config of setting apk for xLoud
+#Added system property for xLoud and ClearPhase
+ro.somc.clearphase.supported=true
+ro.semc.xloud.supported=true
+persist.audio.hp=true
+#End_Arima_HCSW7_20130327_SandyTan
+###End_Arima_HCSW7_20130429_ChrisHe - [TunderSoft] xLoud patch 20130320
+
+# Begin_Arima_20130417_BacalLi,fix ATS00157992, download internet settings from sony server
+ro.semc.product.model=semcsdk
+# End_Arima_20130417_BacalLi
+

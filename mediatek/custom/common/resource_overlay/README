@@ -1,0 +1,10 @@
+Product-Line level, Operator spec level & project level's common part overlay resource will be placed here.
+Folder naming should follow the rule as below.
+
+[Naming Rule]
+<resolution size abbr.>
+
+[Examples]
+qHD => resource_overlay/qHD
+WSQVGA => resource_overlay/WSQVGA
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" xmlns:tools="http://schemas.android.com/tools">  
+    <string name="no_sip_account_found">ဤပစ္စည်းပေါ်တွင် အင်တာနက်ဖြင့် ဖုန်းခေါ်ဆိုမှုအကောင့်များ မရှိပါ။ ယခုထည့်မလား</string>  
+    <string name="ota_progress">သင့်ပစ္စည်းအား စီစဉ်ဆောင်ရွက်နေစဉ် စောင့်ဆိုင်းပါ။</string>  
+    <string name="ota_skip_activation_dialog_message">လုပ်ဆောင်ချက်စတင်ခြင်းကို ကျော်မည်ဆိုပါက ဖုန်းခေါ်ဆိုခြင်း သို့မဟုတ် မိုဘိုင်းဒေတာအချက်အလက်ကွန်ယက် (Wi-Fi ကွန်ယက်များသို့ ချိတ်ဆက်နိုင်သော်လည်း) ချိတ်ဆက်ခြင်းများ မပြုလုပ်နိုင်ပါ။ သင့်ပစ္စည်း၏ လုပ်ဆောင်ချက်မစတင်မီ သင်ဖွင့်တိုင်း ယင်း၏ လုပ်ဆောင်ချက်စတင်ရန် မေးလိမ့်မည်။</string>  
+    <string name="ota_successful">သင့်ပစ္စည်း၏ လုပ်ဆောင်ချက်စတင်ပြီး ဖြစ်သည်။ ဝန်ဆောင်မှုစတင်ရန် 15 မိနစ်ကြာ ကြာရှိနိုင်သည်။</string>  
+    <string name="ota_title_activate">သင့်ပစ္စည်း၏ လုပ်ဆောင်ချက်စတင်ပါ</string>  
+    <string name="ota_title_activate_success">ပစ္စည်း၏ လုပ်ဆောင်ချက်စတင်ပြီးဖြစ်သည်!</string>  
+    <string name="ota_touch_activate">သင့်ပစ္စည်းဝန်ဆောင်မှု၏ လုပ်ဆောင်ချက်စတင်ရန် အထူးဖုန်းခေါ်ဆိုမှုပြုလုပ်ရန် လိုအပ်သည်။ \n\n\u201C ကို နှိပ်ပြီးနောက် \u201D ၏ လုပ်ဆောင်ချက်ကို စတင်ပြီး ပေးထားသော ညွှန်ကြားချက်များကို နားဆင်၍ သင့်ပစ္စည်း၏ လုပ်ဆောင်ချက်ကို စတင်ပါ။</string>  
+    <string name="ota_unsuccessful">သင့်ပစ္စည်း၏ လုပ်ဆောင်ချက်မစတင်ရသေးပါ။ \nလိုင်းကောင်းကောင်းမိသည့်နေရာ (ပြူတင်းပေါက်နား သို့မဟုတ် အိမ်ပြင်ပ) အား ရှာရန် လိုအပ်သည်။ \n\nပြန်လည်ကြိုးစားကြည့်ပါ သို့မဟုတ် နောက်ထပ်ရွေးချယ်ရန် ဧည့်သည်ဝန်ဆောင်မှုရေးရာသို့ ခေါ်ဆိုပါ။</string>  
+    <string name="puk_unlocked">သင့် SIM ကဒ်အား ပိတ်ဆို့ထားခြင်းကို ဖယ်ရှားပြီးဖြစ်သည်။ သင့်ပစ္စည်းအား သော့ဖွင့်နေဆဲ\u2026</string>  
+</resources>

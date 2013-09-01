@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">  
+    <string name="oobe_summary_import_contacts">Válasszon egy beillesztett SIM-kártyát vagy az összeset a partnerek tabletre történő importálásához.</string> 
+    <string name="oobe_summary_language_setting">Válasszon a tablet működtetéséhez egy nyelvet</string>  
+</resources>

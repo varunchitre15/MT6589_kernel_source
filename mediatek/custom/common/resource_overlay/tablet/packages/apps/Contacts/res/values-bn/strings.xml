@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="generic_no_account_prompt">আপনার পরিচিতজনের তালিকা নিরাপদে রাখুন এমনকি আপনি ডিভাইস হারিয়ে ফেললেও: কোনো একটি অনলাইন সার্ভিসের সাথে সিঙ্ক করুন।</string>  
+    <string name="phone_storage_full_create">ডিভাইসের স্টোরেজ পরিপূর্ণ, আপনি নতুন পরিচিতজন তৈরি করতে পারবেন না।</string>  
+    <string name="phone_storage_full_edit">ডিভাইসের স্টোরেজ পরিপূর্ণ, আপনি পরিচিতজন সম্পাদনা করতে পারবেন না।</string>      
+    <string name="warning_detail">সিম সংশ্লিষ্টতা ডিভাইসে পরিচিতজনের তথ্য আমদানি করবে। আপনি কি সিম সংশ্লিষ্টতা চালিয়ে যাবেন?</string>      
+</resources>

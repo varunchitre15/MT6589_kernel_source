@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="generic_no_account_prompt">آلہ کھو جانے کے باوجود بھی اپنے روابط محفوظ رکھيں: کسی آن لائن خدمت کے ساتھ سنکرونائز کریں۔</string>  
+    <string name="phone_storage_full_create">آلے کا ذخیرہ بھر گیا ہے، آپ نیا رابطہ نہیں بناسکتے ہيں۔</string>  
+    <string name="phone_storage_full_edit">آلے کا ذخیرہ بھر گیا ہے، آپ رابطہ ترمیم نہيں کرسکتے ہيں۔</string> 
+    <string name="warning_detail">SIM کے ساتھ منسلک کرنے سے آلے میں رابطے کو درآمد کیا جائے گا۔ کیا آپ SIM کے ساتھ منسلک کرنے کو جاری رکھنا چاہتے ہيں؟.</string>  
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="no_sip_account_found">"该设备上没有互联网电话帐户。要立即添加一个帐户吗？"</string>
+    <string name="ota_progress">"正在向您的设备中写入程序，请耐心等待。"</string>
+    <string name="ota_skip_activation_dialog_message">"如果您略过激活步骤，就无法拨打电话或连接到移动数据网络（不过您可以连接到 Wi-Fi 网络）。如果您不激活设备，每次开机时都会收到激活提示。"</string>
+    <string name="ota_successful">"您的设备已激活。最多 15 分钟即可开始使用服务。"</string>
+    <string name="ota_title_activate">"激活您的设备"</string>
+    <string name="ota_title_activate_success">"设备已激活！"</string>
+    <string name="ota_touch_activate">"需要拨打特别号码才能激活您的设备服务。"\n\n"在按下“激活”后，按照语音提示激活您的设备。"</string>
+    <string name="ota_unsuccessful">"您的设备尚未激活。"\n"您可能需要找一个电话信号更好的位置（窗户附近或室外）。"\n\n"再试一次，或呼叫客户服务中心寻求更多解决方法。"</string>
+    <string name="puk_unlocked">"您的 SIM 卡已解锁。正在解锁您的设备..."</string>
+</resources>

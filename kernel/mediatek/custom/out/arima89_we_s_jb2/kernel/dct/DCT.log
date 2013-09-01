@@ -1,0 +1,28 @@
+open workspace file OK
+
+parse ADC_YuSu.cmp file success 
+
+Parse GPIO_YuSu.Cmp File success!
+
+parse EINT_YuSu.cmp file success 
+
+parse PMIC.cmp file success 
+
+parse key_YuSu.cmp file success 
+
+GenCode cust_gpio_boot.h OK
+
+GenCode cust_gpio_usage.h OK 
+
+GenCode cust_eint.h OK 
+
+GenCode cust_eint_ext.h OK 
+
+GenCode cust_adc.h !
+
+GenCode cust_kpd.h 
+
+GenCode pmic_drv.h 
+
+GenCode pmic_drv.c 
+

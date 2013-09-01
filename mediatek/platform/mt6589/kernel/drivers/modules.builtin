@@ -1,0 +1,15 @@
+kernel/mediatek/platform/mt6589/kernel/drivers/i2c/i2c.ko
+kernel/mediatek/platform/mt6589/kernel/drivers/i2c/i2c_common.ko
+kernel/mediatek/platform/mt6589/kernel/drivers/keypad/kpd.ko
+kernel/mediatek/platform/mt6589/kernel/drivers/mmc-host/dbg.ko
+kernel/mediatek/platform/mt6589/kernel/drivers/mmc-host/sd.ko
+kernel/mediatek/platform/mt6589/kernel/drivers/mmc-host/mt_sd_misc.ko
+kernel/mediatek/platform/mt6589/kernel/drivers/power/pmic_mt6320.ko
+kernel/mediatek/platform/mt6589/kernel/drivers/power/upmu_common.ko
+kernel/mediatek/platform/mt6589/kernel/drivers/power/mt_battery_bq24157.ko
+kernel/mediatek/platform/mt6589/kernel/drivers/power/mt6320_fuel_gauge.ko
+kernel/mediatek/platform/mt6589/kernel/drivers/power/bq24157.ko
+kernel/mediatek/platform/mt6589/kernel/drivers/spi/spi.ko
+kernel/mediatek/platform/mt6589/kernel/drivers/spi/spi-dev.ko
+kernel/mediatek/platform/mt6589/kernel/drivers/uart/uart.ko
+kernel/mediatek/platform/mt6589/kernel/drivers/usb20/usb20.ko

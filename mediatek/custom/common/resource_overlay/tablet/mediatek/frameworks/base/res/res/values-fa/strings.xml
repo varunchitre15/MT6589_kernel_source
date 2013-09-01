@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="aerr_application_lowmem">پر شدن حافظه تبلت، برنامه مذکور متوقف گردیده است. لطفا مقداری فضای خالی ایجاد کرده و دوباره تلاش کنید.</string>  
+    <string name="aerr_process_lowmem">پر شدن حافظه تبلت، پردازش مذکور متوقف گردیده است. لطفا مقداری فضای خالی ایجاد کرده و دوباره تلاش کنید.</string> 
+    <string name="criticallowmessage">حافظه دستگاه پر است. لطفاً فايلهای بلااستفاده را حذف کنيد. در غير اين صورت برنامه ممکن است به طور غير منتظره متوقف شود</string>  
+</resources>

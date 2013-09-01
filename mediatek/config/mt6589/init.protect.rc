@@ -1,0 +1,29 @@
+#init.protect.rc
+
+on early-init
+#create mount point for protect partition
+
+    mkdir /protect_f 0771 system system
+    mkdir /protect_s 0771 system system
+
+on fs
+# mount protected partitions
+
+    write /proc/bootprof "INIT:PROTECT:Mount_START"
+    exec /sbin/e2fsck -pfD /emmc@protect_f
+    exec /sbin/tune2fs -O has_journal /emmc@protect_f
+    mount ext4 /emmc@protect_f /protect_f noatime nosuid nodev wait commit=1,nodelalloc,noauto_da_alloc
+    exec /sbin/e2fsck -pfD /emmc@protect_s
+    exec /sbin/tune2fs -O has_journal /emmc@protect_s
+    mount ext4 /emmc@protect_s /protect_s noatime nosuid nodev wait commit=1,nodelalloc,noauto_da_alloc	
+    write /proc/bootprof "INIT:PROTECT:Mount_END"
+
+#end of mount protected partitions
+
+on post-fs-data
+    # We chown/chmod /protect_f and /protect_s again so because mount is run as root + defaults
+    chown system system /protect_f
+    chmod 0771 /protect_f
+
+    chown system system /protect_s
+    chmod 0771 /protect_s

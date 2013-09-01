@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+            <!-- Add for call log -->
+    <dimen name="calllog_search_button_all_width">84dip</dimen>
+    <dimen name="calllog_search_button_incoming_width">84dip</dimen>
+    <dimen name="calllog_search_button_incoming_margin_left">20dip</dimen>
+    <dimen name="calllog_search_button_outgoing_width">84dip</dimen>
+    <dimen name="calllog_search_button_outgoing_margin_left">28dip</dimen>
+    <dimen name="calllog_search_button_missed_width">84dip</dimen>
+    <dimen name="calllog_search_button_missed_margin_left">28dip</dimen>
+    <dimen name="calllog_search_button_all_tab_text_margin_left">-70dip</dimen>
+    <dimen name="calllog_search_image_icon_margin_left">-60dip</dimen>
+
+    <dimen name="dialpad_digits_width">303dip</dimen>
+</resources>

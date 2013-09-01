@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="335dip"
+	android:layout_height="200dip"
+	android:background="@drawable/wgt_clock_style_bg" >
+
+	<RelativeLayout
+		android:id="@+id/current_container"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="20dip"
+		android:layout_marginTop="14dip" >
+
+		<ClocksWgtAnalogClock
+			android:id="@+id/localcitytime"
+			android:layout_width="140dip"
+			android:layout_height="140dip"
+			android:src="@drawable/wgt_clock_style1_day_dial" />
+		
+		<TextView
+			android:id="@+id/localcity"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/localcitytime"
+			android:layout_centerHorizontal="true"
+			android:layout_marginTop="8dip"
+			android:background="#00FF0000"
+			android:ellipsize="marquee"
+			android:focusable="false"
+			android:gravity="center"
+			android:shadowColor="#FF000000"
+			android:shadowRadius="2.0"
+			android:singleLine="true"
+			android:text="@string/current_time_text"
+			android:textColor="#FFF" />
+	</RelativeLayout>
+
+	<RelativeLayout
+		android:id="@+id/local_container"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="15dip"
+		android:layout_marginTop="14dip"
+		android:layout_toRightOf="@id/current_container" >
+
+		<RelativeLayout
+			android:id="@+id/local_time_img"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" >
+
+			<ImageButton
+				android:id="@+id/another_button"
+				android:layout_width="140dip"
+				android:layout_height="140dip"
+				android:background="@drawable/add_icon_selector" />
+
+			<ClocksWgtAnalogClock
+				android:id="@+id/anothercitytime"
+				android:layout_width="140dip"
+				android:layout_height="140dip"
+				android:dial="@drawable/wgt_clock_style1_day_dial"
+				android:hand_hour="@drawable/wgt_clock_style1_day_hour"
+				android:hand_minute="@drawable/wgt_clock_style1_day_minute"
+				android:visibility="gone" />
+		</RelativeLayout>
+
+		<TextView
+			android:id="@+id/anothercity"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/local_time_img"
+			android:layout_centerHorizontal="true"
+			android:layout_marginTop="7dip"
+			android:ellipsize="marquee"
+			android:focusable="false"
+			android:gravity="center"
+			android:shadowColor="#FF000000"
+			android:shadowRadius="2.0"
+			android:singleLine="true"
+			android:text="@string/another_city_text"
+			android:textColor="#FFF" />
+	</RelativeLayout>
+
+</RelativeLayout>

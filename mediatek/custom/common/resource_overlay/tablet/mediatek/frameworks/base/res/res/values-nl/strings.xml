@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="aerr_application_lowmem">Tabletopslag vol; de toepassing is gestopt. Maak ruimte vrij en probeer het opnieuw.</string>  
+    <string name="aerr_process_lowmem">Tabletopslag vol; het proces is gestopt. Maak ruimte vrij en probeer het opnieuw.</string> 
+    <string name="criticallowmessage">De opslag van het toestel is vol. Verwijder overbodige bestanden, anders kan de toepassing onverwacht stoppen</string>  
+</resources>

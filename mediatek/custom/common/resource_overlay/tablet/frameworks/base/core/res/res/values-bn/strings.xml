@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* //device/apps/common/assets/res/any/strings.xml
+**
+** Copyright 2006, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">  
+    <string name="permdesc_disableKeyguard">অ্যাপকে অনুমতি দেয় কি-লক ও এর সাথে সংশ্লিষ্ট পাসওয়ার্ড নিরাপত্তা নিষ্ক্রিয় করতে। উদাহরণস্বরূপ, ট্যাবলেট কি-লককে নিষ্ক্রিয় করে যখন ইনকামিং কল আসে, তারপর কল শেষ হয়ে গেলে আবার তা পুনরায় সক্রিয় করে।</string> 
+    <string name="wifi_p2p_frequency_conflict_message"><xliff:g id="device_name">%1$s</xliff:g> এর সাথে সংযুক্ত করার সময় ট্যাবলেটটি ওয়াই-ফাই থেকে সাময়িকভাবে বিচ্ছিন্ন হয়ে যাবে</string>
+</resources>

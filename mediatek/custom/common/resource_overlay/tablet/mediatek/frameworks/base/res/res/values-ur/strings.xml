@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">  
+    <string name="aerr_application_lowmem">ٹیبلیٹ کا اسٹوریج بھر گیا ہے، اطلاق رک گیا ہے۔ براہ کرم جگہ خالی کریں اور دوبارہ کوشش کریں۔</string>  
+    <string name="aerr_process_lowmem">ٹیبلیٹ کا اسٹوریج بھر گیا، کارروائی رک گئی ہے۔ براہ کرم جگہ خالی کریں اور دوبارہ کوشش کریں۔</string> 
+    <string name="criticallowmessage">آلے کا ذخیرہ بھر گيا ہے، برائے مہربان بے کار فائلیں مٹائيں، ورنہ ممکن ہے کہ اضافی پروگرام غیرمتوقع طور پر خارج ہو</string>  
+</resources>

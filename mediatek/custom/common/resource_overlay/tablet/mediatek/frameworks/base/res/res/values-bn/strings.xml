@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">  
+    <string name="aerr_application_lowmem">ট্যাবলেট স্টোরেজ পূর্ণ, অ্যাপ্লিকেশন বন্ধ হয়ে গেছে। জায়গা খালি করে আবার চেষ্টা করুন।</string>  
+    <string name="aerr_process_lowmem">ট্যাবলেট স্টোরেজ পূর্ণ, প্রক্রিয়া বন্ধ হয়ে গেছে। জায়গা খালি করে আবার চেষ্টা করুন।</string> 
+    <string name="criticallowmessage">ডিভাইসের স্টোরেজ পরিপূর্ণ, অপ্রয়োজনীয় ফাইল মুছে ফেলুন, না হয় অ্যাপ্লিকেশন অপ্রত্যাশিতভাবে বের হয়ে যাবে</string>  
+</resources>

@@ -1,0 +1,49 @@
+#!/bin/bash
+if [ "$1" = "" ]; then
+	echo "Please input resolution,"
+	echo "Such as: qvga, wqvga, wvga, hvga"
+	exit
+fi
+p=$1
+./tool/bmp_to_raw ./temp0.raw ./$p/"${p}_uboot".bmp
+./tool/bmp_to_raw ./temp1.raw ./$p/"${p}_battery".bmp
+./tool/bmp_to_raw ./temp2.raw ./$p/"${p}_low_battery".bmp
+./tool/bmp_to_raw ./temp3.raw ./$p/"${p}_charger_ov".bmp
+./tool/bmp_to_raw ./temp4.raw ./$p/"${p}_num_0".bmp
+./tool/bmp_to_raw ./temp5.raw ./$p/"${p}_num_1".bmp
+./tool/bmp_to_raw ./temp6.raw ./$p/"${p}_num_2".bmp
+./tool/bmp_to_raw ./temp7.raw ./$p/"${p}_num_3".bmp
+./tool/bmp_to_raw ./temp8.raw ./$p/"${p}_num_4".bmp
+./tool/bmp_to_raw ./temp9.raw ./$p/"${p}_num_5".bmp
+./tool/bmp_to_raw ./temp10.raw ./$p/"${p}_num_6".bmp
+./tool/bmp_to_raw ./temp11.raw ./$p/"${p}_num_7".bmp
+./tool/bmp_to_raw ./temp12.raw ./$p/"${p}_num_8".bmp
+./tool/bmp_to_raw ./temp13.raw ./$p/"${p}_num_9".bmp
+./tool/bmp_to_raw ./temp14.raw ./$p/"${p}_num_percent".bmp
+./tool/bmp_to_raw ./temp15.raw ./$p/"${p}_bat_animation_01".bmp
+./tool/bmp_to_raw ./temp16.raw ./$p/"${p}_bat_animation_02".bmp
+./tool/bmp_to_raw ./temp17.raw ./$p/"${p}_bat_animation_03".bmp
+./tool/bmp_to_raw ./temp18.raw ./$p/"${p}_bat_animation_04".bmp
+./tool/bmp_to_raw ./temp19.raw ./$p/"${p}_bat_animation_05".bmp
+./tool/bmp_to_raw ./temp20.raw ./$p/"${p}_bat_animation_06".bmp
+./tool/bmp_to_raw ./temp21.raw ./$p/"${p}_bat_animation_07".bmp
+./tool/bmp_to_raw ./temp22.raw ./$p/"${p}_bat_animation_08".bmp
+./tool/bmp_to_raw ./temp23.raw ./$p/"${p}_bat_animation_09".bmp
+./tool/bmp_to_raw ./temp24.raw ./$p/"${p}_bat_animation_10".bmp
+./tool/bmp_to_raw ./temp25.raw ./$p/"${p}_bat_10_01".bmp
+./tool/bmp_to_raw ./temp26.raw ./$p/"${p}_bat_10_02".bmp
+./tool/bmp_to_raw ./temp27.raw ./$p/"${p}_bat_10_03".bmp
+./tool/bmp_to_raw ./temp28.raw ./$p/"${p}_bat_10_04".bmp
+./tool/bmp_to_raw ./temp29.raw ./$p/"${p}_bat_10_05".bmp
+./tool/bmp_to_raw ./temp30.raw ./$p/"${p}_bat_10_06".bmp
+./tool/bmp_to_raw ./temp31.raw ./$p/"${p}_bat_10_07".bmp
+./tool/bmp_to_raw ./temp32.raw ./$p/"${p}_bat_10_08".bmp
+./tool/bmp_to_raw ./temp33.raw ./$p/"${p}_bat_10_09".bmp
+./tool/bmp_to_raw ./temp34.raw ./$p/"${p}_bat_10_10".bmp
+./tool/bmp_to_raw ./temp35.raw ./$p/"${p}_bat_bg".bmp
+./tool/bmp_to_raw ./temp36.raw ./$p/"${p}_bat_img".bmp
+./tool/bmp_to_raw ./temp37.raw ./$p/"${p}_bat_100".bmp
+./tool/bmp_to_raw ./boot_logo ./$p/"${p}_kernel".bmp
+./tool/zpipe -l 9 ./"${p}.raw" temp0.raw temp1.raw temp2.raw temp3.raw temp4.raw temp5.raw temp6.raw temp7.raw temp8.raw temp9.raw temp10.raw temp11.raw temp12.raw temp13.raw temp14.raw temp15.raw temp16.raw temp17.raw temp18.raw temp19.raw temp20.raw temp21.raw temp22.raw temp23.raw temp24.raw temp25.raw temp26.raw temp27.raw temp28.raw temp29.raw temp30.raw temp31.raw temp32.raw temp33.raw temp34.raw temp35.raw temp36.raw temp37.raw
+rm -rf ./temp0.raw ./temp1.raw ./temp2.raw ./temp3.raw ./temp4.raw ./temp5.raw ./temp6.raw ./temp7.raw ./temp8.raw ./temp9.raw ./temp10.raw ./temp11.raw ./temp12.raw ./temp13.raw ./temp14.raw ./temp15.raw ./temp16.raw ./temp17.raw ./temp18.raw ./temp19.raw ./temp20.raw ./temp21.raw ./temp22.raw ./temp23.raw ./temp24.raw ./temp25.raw ./temp26.raw ./temp27.raw ./temp28.raw ./temp29.raw ./temp30.raw ./temp31.raw ./temp32.raw ./temp33.raw ./temp34.raw ./temp35.raw ./temp36.raw ./temp37.raw ./bootlogo.raw 
+echo "conversion finished"

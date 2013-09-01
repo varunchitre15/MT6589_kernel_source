@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">  
+    <string name="oobe_summary_import_contacts">ជ្រើសរើស SIM កាតដែលអ្នកបានស៊កបញ្ចូលខ្លះ ឬច្រើន ដើម្បីនាំចូលលេខទំនាក់ទំនងទៅក្នុងកូនកុំព្យូទ័រ ។</string> 
+    <string name="oobe_summary_language_setting">ជ្រើសរើសភាសាប្រតិបត្តិការរបស់របស់កូនកុំព្យូទ័ររបស់អ្នក</string>  
+</resources>

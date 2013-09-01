@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">  
+    <string name="oobe_summary_import_contacts">တက်ဘလက်သို့ အဆက်အသွယ်များကိုတင်ပို့ရန် သင်ထည့်ထားသော SIM ကတ်အချို့သို့မဟုတ် အားလုံးကိုရွေးရန်။</string>  
+    <string name="oobe_summary_language_setting">တက်ဘလက်ကို စီမံခန့်ခွဲဖို့ သင့်ဘာသာစကားကိုရွေးရန်</string>  
+</resources>

@@ -1,0 +1,2 @@
+#! /bin/sh
+exec /home/phanna/src/bison/bin/bison -y "$@"

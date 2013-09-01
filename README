@@ -1,0 +1,3 @@
+BUILD_COMMAND:
+1.cd kernel
+2.TARGET_PRODUCT=arima89_we_s_jb2 MTK_ROOT_CUSTOM=../mediatek/custom/ make

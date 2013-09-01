@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="aerr_application_lowmem">A táblet tárhelye megtelt, az alkalmazás leállt. Szabadítson fel helyet és próbálja újra.</string>  
+    <string name="aerr_process_lowmem">A táblet tárhelye megtelt, a folyamat leállt. Szabadítson fel helyet és próbálja újra.</string> 
+    <string name="criticallowmessage">Az eszköz memóriája megtelt. Törölje a fölösleges fájlokat, mert ellenkező esetben az alkalmazás váratlanul kiléphet.</string>  
+</resources>
