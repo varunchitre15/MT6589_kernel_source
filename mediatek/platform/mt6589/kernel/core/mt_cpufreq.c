@@ -124,7 +124,7 @@ static unsigned int g_limited_max_ncpu;
 static unsigned int g_limited_max_freq;
 static unsigned int g_limited_min_freq;
 static unsigned int g_cpufreq_get_ptp_level = 0;
-static unsigned int g_max_freq_by_ptp = DVFS_F1; /* default 1.2GHz */
+static unsigned int g_max_freq_by_ptp = DVFS_F1; /* default 1.7GHz */
 
 static int g_ramp_down_count = 0;
 
